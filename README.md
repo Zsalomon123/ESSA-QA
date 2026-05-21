@@ -1,2 +1,0 @@
-# ESSA-QA
-Agente diseño
