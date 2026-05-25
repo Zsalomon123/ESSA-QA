@@ -1,0 +1,327 @@
+﻿ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar condición financiera;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;El usuario visualiza la opcion Cancelar en registros elegibles del tab Pendientes del Historico.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar a Gestión de facturación;Pantalla cargada;;;;;;;;;;;
+;;;3;Validar estado financiero del usuario;Sistema evalúa facturas;;;;;;;;;;;
+;;;4;Usuario con deuda vencida;Se muestra botón “Financiación express”;;;;;;;;;;;
+;Test Case;Validar ocultamiento cuando no cumple condición;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;El super-usuario puede consultar el detalle y ejecutar la cancelacion de transacciones elegibles.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Usuario sin deuda vencida;Sistema evalúa;;;;;;;;;;;
+;;;3;Visualizar pantalla;No se muestra botón Financiación express;;;;;;;;;;;
+;Test Case;Validar redirección al flujo;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Un usuario con permiso funcional puede consultar el detalle y cancelar transacciones elegibles.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar a Mi cuenta > Gestión de facturación;Pantalla cargada;;;;;;;;;;;
+;;;3;Usuario con deuda vencida;Se muestra botón “Financiación express”;;;;;;;;;;;1
+;;;4;Seleccionar “Financiación express”;Sistema ejecuta acción;;;;;;;;;;;
+;;;5;Validar navegación;Redirige a Paso 1 -Información del solicitante;;;;;;;;;;;
+;Test Case;Validar carga de datos en modo solo lectura;;;;;;;;;;;;;;
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar campos;"Todos los datos visibles:
+Nombres y apellidos (alfabético, solo lectura).
+Tipo de persona (alfanumérico, solo lectura).
+Número de documento (numérico, solo lectura).
+Lugar de expedición del documento (alfanumérico, solo lectura).
+Teléfono (numérico, solo lectura).
+Calidad de cliente (alfanumérico, solo lectura).
+Dirección (alfanumérico con caracteres especiales, solo lectura).
+Departamento (alfabético, solo lectura).
+Municipio (alfabético, solo lectura).";;;;;;;;;;;
+;;;3;Intentar editar campos;Campos en solo lectura;;;;;;;;;;;1
+;Test Case;Validar mensaje de actualización de datos;;;;Por Analizar;Integracion;Negativa;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Un usuario con permiso solo de visualizacion no puede ver la opcion Cancelar en el Historico.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar pantalla;Mensaje informativo : Antes de continuar, confirma que tus datos estén correctos. Si algo no coincide, puedes actualizar tu información.debe incluir un enlace o botón que redirija directamente a la funcionalidad de actualización de datos del perfil del usuario.;;;;;;;;;;;
+;;;3;"Seleccionar  ""actualizar tu información""";Redirige a actualización de perfil;;;;;;;;;;;
+;Test Case;Validar captura de fotografías;;;;Por Analizar;Integracion;Negativa;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Un usuario sin permisos no puede acceder por URL a la pantalla funcional de Historico para cancelar.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;1
+;;;2;completar con captura de fotografías el documento de identidad.;El sistema deberá permitir tomar una fotografía;;;;;;;;;;;
+;;;3;"Tomar foto frontal utilizando exclusivamente la cámara del dispositivo.
+";Imagen capturada;;;;;;;;;;;
+;;;4;"Tomar foto reverso utilizando exclusivamente la cámara del dispositivo.
+";Imagen capturada;;;;;;;;;;;
+;Test Case;Validar obligatoriedad de fotos;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;El modal de confirmacion presenta los textos, icono y acciones definidos para prevenir cancelaciones accidentales.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Tomar solo una foto del documento;Intentar avanzar;;;;;;;;;;;
+;;;3;Validar resultado;No permite continuar;;;;;;;;;;;
+;Test Case;Validar previsualización y retoma;;;;;;;;;;;;;;
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Tomar foto  del documento;Imagen visible;;;;;;;;;;;
+;;;3;Retomar foto;Se reemplaza imagen;;;;;;;;;;;3
+;Test Case;Validar eliminación de fotografías;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Al cancelar el proceso desde el modal, no se realiza ninguna cancelacion y el usuario permanece en Pendientes.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Seleccionar eliminar o icnono de basura;Se elimina la imagen ;;;;;;;;;;;
+;;;3;Validar mensaje de confirmación;Se muestra mensaje de confirmación solicitando la validación de la acción.;;;;;;;;;;;
+;Test Case;Validar avance al Paso 2;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Al cerrar el modal con la accion de cierre, no se realiza ninguna cancelacion y el usuario permanece en Pendientes.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Capturar ambas fotos correctamente;Datos completos;;;;;;;;;;;
+;;;3;Continuar;Permite avanzar al  Paso 2 – Opciones de financiación;;;;;;;;;;;
+;Test Case;Validar información de deuda;;;;;;;;;;;;;;
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar valores;"El total de la deuda actual (numérico, moneda local).
+El valor máximo a financiar (numérico, moneda local).";;;;;;;;;;;
+;Test Case;Validar carga de opciones de financiación;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones BZLC de clientes PN y PJ muestran Cancelar solo en estados permitidos.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;valida Créditos/Opciones;Se muestran datos;;;;;;;;;;;2
+;;;3;Visualizar opciones;"Se listan opciones:
+Número de cuotas (numérico).
+Valor de la cuota (numérico, moneda local).
+Tasa de interés aplicable (numérico, porcentaje).";;;;;;;;;;;
+;Test Case;Validar selección de opción;;;;Por Analizar;Integracion;Negativa;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones BHDIB solo permiten cancelar en PJ y en estados permitidos definidos por la HU.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;No seleccionar opción;Intentar continuar;;;;;;;;;;;
+;;;3;Validar resultado;No permite continuar;;;;;;;;;;;
+;;;4;Seleccionar opción válida;Permite continuar;;;;;;;;;;;
+;Test Case;Validar firma digital;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar lienzo de firma digital;Se abre modal con lienzo para firmas;;;;;;;;;;;
+;;;3;Firmar;Firma registrada;;;;;;;;;;;
+;;;4;Confirmar firma;Se habilita botón Enviar;;;;;;;;;;;
+;Test Case;Validar envío de solicitud;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Seleccionar Enviar;Sistema invoca servicio;;;;;;;;;;;
+;Test Case;Validar respuesta exitosa;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Recibir respuesta exitosa;Sistema procesa;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;Test Case;Validar contenido del volante Inicial;;;;;;;;;;;;;;
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Visualizar documento;"Contiene:
+Un Header (imagen adjunta a la HU)
+Titulo: “Financiación express”";;;;;;;;;;;
+;;;5;Revisar datos;Cliente, dirección, número orden correctos;;;;;;;;;;;
+;Test Case;"Validar ""Datos del solicitante"" en el volante";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Datos del solicitante“;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;"Se muestra datos:
+Tipo de Documento: Mostrar la descripción del tipo de documento. Ejemplo: “Cédula de Ciudadanía”
+Número Documento: Numero de identificación del deudor.
+Fecha Expedición: fecha de expedición del numero de identificación del deudor.
+Lugar Expedición: Lugar de expedición del numero de identificación del deudor.
+En Calidad: campo de Clase solicitante que tiene el usuario seleccionado en los datos de la cuenta.
+Primer Nombre: Primer nombre del deudor.
+Primer Apellido: primer apellido del deudor.
+Segundo Apellido: segundo apellido del deudor.";;;;;;;;;;;
+;Test Case;"Validar “Financiación Express"" en el volante";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Las transacciones de Cheques y TI muestran Cancelar solo para clientes y estados habilitados.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Financiación Express”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;"Se muestra datos:
+Cedula: Numero de identificación del deudor.
+Saldo Total
+Saldo a Financiar
+Numero Cuotas
+Interés
+Cuota Periódica
+Numero Proceso";;;;;;;;;;;
+;Test Case;"Validar “Mensjae "" en el volante";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;El sistema almacena correctamente el usuario y la fecha asociados a la cancelacion del movimiento.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Financiación Express”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar mensaje;Mensaje: Se generó crédito con el proceso XXXXXX para la cuenta: YYYYY. El saldo no financiado es de $ZZZZZZ;;;;;;;;;;;
+;;;6;Revisar XXXXXX;XXXXXX → Creditos;;;;;;;;;;;
+;;;7;Revisar YYYYYY;YYYYY → Numero de cuenta para el que se solicitó la financiación.;;;;;;;;;;;
+;;;8;Revisar $ZZZZZZZ;ZZZZZZ--> Créditos/Opciones se saca de la resta de los atributos decSaldoTotal - decSaldoFinanciar. (essa verifica);;;;;;;;;;;
+;Test Case;Validar “Cliente Digital” en el volante;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Los datos actualizados del movimiento cancelado se consultan de forma consistente desde cualquier flujo de BEL y BO.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección“Cliente Digital”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;Teléfono: Numero de celular del deudor;;;;;;;;;;;
+;Test Case;Validar “Autorización para el tratamiento de datos”, en el volante;;;;Por Analizar;Integracion;Negativa;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;Ante un error en la cancelacion, el sistema informa la falla y redirige al tab Pendientes.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección“Autorización para el tratamiento de datos”, ;Datos correctos;;;;;;;;;;;
+;;;5;Revisar texto;“En cumplimiento a la ley 1581 de 2012, autorizo con mi firma de manera libre, previa, expresa, voluntaria e informa para realizar el tratamiento de los datos personales consignados en el presente formato con las siguientes finalidades: 1. para enviarme información relacionada con las actividades, programas y servicios que ofrece la ESSA, 2. para buscar posteriormente una nueva opinión sobre un servicio o programa de la ESSA, 3. darle pleno cumplimiento a las obligaciones legales y regulatorias aplicables a la prestación del servicio publico de energía al contrato de condiciones uniformes, entendiéndose incluidas todas las actividades u operaciones necesarias para el cumplimiento del mismo. Igualmente autorizo a que se actualicen mis datos personales con los consignados en este formato.“;;;;;;;;;;;
+;Test Case;Validar firma y fecha del volante;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La pantalla y el modal de cancelacion mantienen consistencia visual con el figma de referencia.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;4
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar firma y fecha;"Se muestra:
+La firma realizada por el cliente junto con su nombre e identificación.
+Fecha y hora de impresión: que es la fecha y hora de impresión, en formato DD/MES/AAAA HH:MM (AM/PM), El mes se debe mostrar abreviado.";;;;;;;;;;;
+;Test Case;Validar nombre del archivo;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La pantalla Historico pendientes y su modal de cancelacion se adaptan correctamente a vista movil.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;4
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Descargar archivo;Archivo generado;;;;;;;;;;;
+;;;5;Revisar nombre;Formato financiación_express_DD/MM/AAAA_YYYY, donde YYYY corresponde al número de cuenta asociada a la financiación.;;;;;;;;;;;
+;;Validar error;;;;;;;;;;;;;;
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera error;;;;;;;;;;;
+;;;4;Validar mensaje de error;"Se muestra mensaje:"" ""No fue posible consultar la información en este momento. Por favor, intenta nuevamente."" botón reintentar";;;;;;;;;;;
+;;;5;Seleccionar botón reintentar;Permite reintentar la operación;;;;;;;;;;;
+;Test Case;Validar condición financiera -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar a Gestión de facturación;Pantalla cargada;;;;;;;;;;;
+;;;3;Validar estado financiero del usuario;Sistema evalúa facturas;;;;;;;;;;;
+;;;4;Usuario con deuda vencida;Se muestra botón “Financiación express”;;;;;;;;;;;
+;Test Case;Validar ocultamiento cuando no cumple condición -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Usuario sin deuda vencida;Sistema evalúa;;;;;;;;;;;
+;;;3;Visualizar pantalla;No se muestra botón Financiación express;;;;;;;;;;;
+;Test Case;Validar redirección al flujo -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Carga de la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar a Mi cuenta > Gestión de facturación;Pantalla cargada;;;;;;;;;;;
+;;;3;Usuario con deuda vencida;Se muestra botón “Financiación express”;;;;;;;;;;;
+;;;4;Seleccionar “Financiación express”;Sistema ejecuta acción;;;;;;;;;;;
+;;;5;Validar navegación;Redirige a Paso 1 -Información del solicitante;;;;;;;;;;;
+;Test Case;Validar carga de datos en modo solo lectura -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar campos;"Todos los datos visibles:
+Nombres y apellidos (alfabético, solo lectura).
+Tipo de persona (alfanumérico, solo lectura).
+Número de documento (numérico, solo lectura).
+Lugar de expedición del documento (alfanumérico, solo lectura).
+Teléfono (numérico, solo lectura).
+Calidad de cliente (alfanumérico, solo lectura).
+Dirección (alfanumérico con caracteres especiales, solo lectura).
+Departamento (alfabético, solo lectura).
+Municipio (alfabético, solo lectura).";;;;;;;;;;;
+;;;3;Intentar editar campos;Campos en solo lectura;;;;;;;;;;;
+;Test Case;Validar mensaje de actualización de datos -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar pantalla;Mensaje informativo : Antes de continuar, confirma que tus datos estén correctos. Si algo no coincide, puedes actualizar tu información.debe incluir un enlace o botón que redirija directamente a la funcionalidad de actualización de datos del perfil del usuario.;;;;;;;;;;;
+;;;3;"Seleccionar  ""actualizar tu información""";Redirige a actualización de perfil;;;;;;;;;;;
+;Test Case;Validar captura de fotografías -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;completar con captura de fotografías el documento de identidad.;El sistema deberá permitir tomar una fotografía;;;;;;;;;;;
+;;;3;"Tomar foto frontal utilizando exclusivamente la cámara del dispositivo.
+";Imagen capturada;;;;;;;;;;;
+;;;3;"Tomar foto reverso utilizando exclusivamente la cámara del dispositivo.
+";Imagen capturada;;;;;;;;;;;
+;Test Case;Validar obligatoriedad de fotos -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Tomar solo una foto del documento;Intentar avanzar;;;;;;;;;;;
+;;;3;Validar resultado;No permite continuar;;;;;;;;;;;
+;Test Case;Validar previsualización y retoma -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Tomar foto  del documento;Imagen visible;;;;;;;;;;;
+;;;3;Retomar foto;Se reemplaza imagen;;;;;;;;;;;
+;Test Case;Validar eliminación de fotografías -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Seleccionar eliminar o icnono de basura;Se elimina la imagen ;;;;;;;;;;;
+;;;3;Validar mensaje de confirmación;Se muestra mensaje de confirmación solicitando la validación de la acción.;;;;;;;;;;;
+;Test Case;Validar avance al Paso 2 -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a Paso 1 – Información del solicitante;Pantalla cargada;;;;;;;;;;;
+;;;2;Capturar ambas fotos correctamente;Datos completos;;;;;;;;;;;
+;;;3;Continuar;Permite avanzar al  Paso 2 – Opciones de financiación;;;;;;;;;;;
+;Test Case;Validar información de deuda -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar valores;"El total de la deuda actual (numérico, moneda local).
+El valor máximo a financiar (numérico, moneda local).";;;;;;;;;;;
+;Test Case;Validar carga de opciones de financiación -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;valida Créditos/Opciones;Se muestran datos;;;;;;;;;;;
+;;;3;Visualizar opciones;"Se listan opciones:
+Número de cuotas (numérico).
+Valor de la cuota (numérico, moneda local).
+Tasa de interés aplicable (numérico, porcentaje).";;;;;;;;;;;
+;Test Case;Validar selección de opción -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;No seleccionar opción;Intentar continuar;;;;;;;;;;;
+;;;3;Validar resultado;No permite continuar;;;;;;;;;;;
+;;;4;Seleccionar opción válida;Permite continuar;;;;;;;;;;;
+;Test Case;Validar firma digital -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Visualizar lienzo de firma digital;Se abre modal con lienzo para firmas;;;;;;;;;;;
+;;;3;Firmar;Firma registrada;;;;;;;;;;;
+;;;4;Confirmar firma;Se habilita botón Enviar;;;;;;;;;;;
+;Test Case;Validar envío de solicitud -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Seleccionar Enviar;Sistema invoca servicio;;;;;;;;;;;
+;Test Case;Validar respuesta exitosa -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Recibir respuesta exitosa;Sistema procesa;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;Test Case;Validar contenido del volante Inicial -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Visualizar documento;"Contiene:
+Un Header (imagen adjunta a la HU)
+Titulo: “Financiación express”";;;;;;;;;;;
+;;;5;Revisar datos;Cliente, dirección, número orden correctos;;;;;;;;;;;
+;Test Case;"Validar ""Datos del solicitante"" en el volante -Mobile";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Datos del solicitante“;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;"Se muestra datos:
+Tipo de Documento: Mostrar la descripción del tipo de documento. Ejemplo: “Cédula de Ciudadanía”
+Número Documento: Numero de identificación del deudor.
+Fecha Expedición: fecha de expedición del numero de identificación del deudor.
+Lugar Expedición: Lugar de expedición del numero de identificación del deudor.
+En Calidad: campo de Clase solicitante que tiene el usuario seleccionado en los datos de la cuenta.
+Primer Nombre: Primer nombre del deudor.
+Primer Apellido: primer apellido del deudor.
+Segundo Apellido: segundo apellido del deudor.";;;;;;;;;;;
+;Test Case;"Validar “Financiación Express"" en el volante -Mobile";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Financiación Express”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;"Se muestra datos:
+Cedula: Numero de identificación del deudor.
+Saldo Total
+Saldo a Financiar
+Numero Cuotas
+Interés
+Cuota Periódica
+Numero Proceso";;;;;;;;;;;
+;Test Case;"Validar “Mensjae "" en el volante -Mobile";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección “Financiación Express”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar mensaje;Mensaje: Se generó crédito con el proceso XXXXXX para la cuenta: YYYYY. El saldo no financiado es de $ZZZZZZ;;;;;;;;;;;
+;;;6;Revisar XXXXXX;XXXXXX → Creditos;;;;;;;;;;;
+;;;7;Revisar YYYYYY;YYYYY → Numero de cuenta para el que se solicitó la financiación.;;;;;;;;;;;
+;;;8;Revisar $ZZZZZZZ;ZZZZZZ--> Créditos/Opciones se saca de la resta de los atributos decSaldoTotal - decSaldoFinanciar. (essa verifica);;;;;;;;;;;
+;Test Case;Validar “Cliente Digital” en el  -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección“Cliente Digital”;Datos correctos;;;;;;;;;;;
+;;;5;Revisar valores;Teléfono: Numero de celular del deudor;;;;;;;;;;;
+;Test Case;Validar “Autorización para el tratamiento de datos”, en el volante -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar sección“Autorización para el tratamiento de datos”, ;Datos correctos;;;;;;;;;;;
+;;;5;Revisar texto;“En cumplimiento a la ley 1581 de 2012, autorizo con mi firma de manera libre, previa, expresa, voluntaria e informa para realizar el tratamiento de los datos personales consignados en el presente formato con las siguientes finalidades: 1. para enviarme información relacionada con las actividades, programas y servicios que ofrece la ESSA, 2. para buscar posteriormente una nueva opinión sobre un servicio o programa de la ESSA, 3. darle pleno cumplimiento a las obligaciones legales y regulatorias aplicables a la prestación del servicio publico de energía al contrato de condiciones uniformes, entendiéndose incluidas todas las actividades u operaciones necesarias para el cumplimiento del mismo. Igualmente autorizo a que se actualicen mis datos personales con los consignados en este formato.“;;;;;;;;;;;
+;Test Case;Validar firma y fecha del volante -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Revisar firma y fecha;"Se muestra:
+La firma realizada por el cliente junto con su nombre e identificación.
+Fecha y hora de impresión: que es la fecha y hora de impresión, en formato DD/MES/AAAA HH:MM (AM/PM), El mes se debe mostrar abreviado.";;;;;;;;;;;
+;Test Case;Validar nombre del archivo -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera un volante de confirmación de la financiación.;;;;;;;;;;;
+;;;4;Descargar archivo;Archivo generado;;;;;;;;;;;
+;;;5;Revisar nombre;Formato financiación_express_DD/MM/AAAA_YYYY, donde YYYY corresponde al número de cuenta asociada a la financiación.;;;;;;;;;;;
+;Test Case;Validar error -Mobile;;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al  Paso 2 – Opciones de financiación;Pantalla cargada;;;;;;;;;;;
+;;;2;Completar datos y firma;Datos válidos;;;;;;;;;;;
+;;;3;Generar volante;Se genera error;;;;;;;;;;;
+;;;4;Validar mensaje de error;"Se muestra mensaje:"" ""No fue posible consultar la información en este momento. Por favor, intenta nuevamente."" botón reintentar";;;;;;;;;;;
+;;;5;Seleccionar botón reintentar;Permite reintentar la operación;;;;;;;;;;;
+;Test Case;"Validar log de ""Solicitar financiación express""";;;;Por Analizar;Integracion;Positiva;Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.;La cancelacion registra en auditoria usuario, IP, fecha, hora y tipo de accion para trazabilidad.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al log de auditoria;Se visualiza la informacion  registrada en el log;;;;;;;;;;;
+;;;2;"Validar que el log de auditoria este trayendo los siguientes datos:
+Usuario que realizó la acción.
+IP del dispositivo.
+Fecha y hora de la acción.
+Correo electrónico
+Resultado (Exitoso / Fallido)";Se muestra los campos registrados en el log correspondientemente.;;;;;;;;;;;
