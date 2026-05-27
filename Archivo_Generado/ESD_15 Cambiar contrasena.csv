@@ -1,0 +1,182 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar acceso a Cambiar contrasena desde Mi perfil;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-03 acceso a Mi perfil habilitado.;El usuario autenticado accede a la opcion Cambiar contrasena desde Mi perfil.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Seleccionar el menu principal;Se despliega el menu de opciones;;;;;;;;;;;
+;;;6;Seleccionar la opcion Mi perfil;Se visualiza la seccion Mi perfil;;;;;;;;;;;
+;;;7;Validar la opcion Cambiar contrasena;La opcion Cambiar contrasena esta visible y habilitada para el usuario autenticado;;;;;;;;;;;
+;Test Case;Validar redireccion al flujo embebido de B2C al seleccionar Cambiar contrasena;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible, PRE-03 acceso a Mi perfil habilitado.;El sistema redirige al flujo embebido de B2C para cambio de contrasena.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena;Se carga el flujo embebido de cambio de contrasena gestionado por B2C dentro de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar envio del identificador de compania ESSA al servicio B2C;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La solicitud al servicio B2C incluye el identificador de compania ESSA.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena;Se invoca la solicitud al flujo de B2C;;;;;;;;;;;
+;;;7;Inspeccionar la solicitud enviada al servicio B2C;La solicitud contiene el atributo identificador de compania con valor ESSA;;;;;;;;;;;
+;Test Case;Validar que la Oficina Virtual delega en B2C las validaciones de contrasena;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La Oficina Virtual delega en B2C las validaciones de contrasena sin aplicar reglas propias.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena;Se visualiza el flujo embebido de B2C;;;;;;;;;;;
+;;;7;Ingresar en B2C una nueva contrasena que incumpla una politica del proveedor;B2C muestra la validacion correspondiente y la Oficina Virtual no presenta validaciones propias adicionales;;;;;;;;;;;
+;Test Case;Validar mensaje informativo de confirmacion cuando el cambio es exitoso;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;El usuario visualiza el mensaje informativo de cambio de contrasena exitoso.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Completar en B2C el cambio de contrasena con datos validos;B2C confirma el cambio de contrasena;;;;;;;;;;;
+;;;7;Validar el mensaje posterior en la Oficina Virtual;Se muestra un mensaje informativo indicando que la contrasena fue actualizada correctamente;;;;;;;;;;;
+;Test Case;Validar redireccion automatica al Home despues del cambio exitoso;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;Despues del cambio exitoso el sistema redirige automaticamente al Home.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Completar en B2C el cambio de contrasena con datos validos;B2C confirma el cambio de contrasena;;;;;;;;;;;
+;;;7;Esperar el cierre del flujo exitoso;Se muestra el mensaje informativo de confirmacion;;;;;;;;;;;
+;;;8;Validar la navegacion posterior;El sistema redirige automaticamente a la pantalla Home de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar manejo de error del servicio B2C durante el cambio de contrasena;;;;Por Analizar;Integracion;Negativa;PRE-01 Usuario autenticado con sesion activa.;Ante un error de B2C el sistema mantiene la sesion activa y muestra un mensaje informativo de error.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena y provocar una respuesta de error del servicio B2C;El flujo informa la falla del servicio;;;;;;;;;;;
+;;;7;Regresar al contexto de la Oficina Virtual;La sesion del usuario permanece activa;;;;;;;;;;;
+;;;8;Validar el mensaje mostrado;Se visualiza un mensaje informativo acorde al tipo de fallo presentado;;;;;;;;;;;
+;Test Case;Validar manejo de indisponibilidad temporal del servicio B2C;;;;Por Analizar;Integracion;Negativa;PRE-01 Usuario autenticado con sesion activa.;Ante indisponibilidad de B2C el sistema informa que el servicio no esta disponible temporalmente y mantiene la sesion activa.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena cuando el servicio B2C esta indisponible;No se carga el flujo de cambio de contrasena;;;;;;;;;;;
+;;;7;Validar el resultado informado;Se muestra un mensaje informativo indicando que el servicio no esta disponible temporalmente;;;;;;;;;;;
+;;;8;Validar el estado de la sesion;La sesion del usuario permanece activa;;;;;;;;;;;
+;Test Case;Validar cancelacion del proceso de cambio de contrasena por el usuario;;;;Por Analizar;Integracion;Negativa;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;Si el usuario cancela el proceso, la sesion se mantiene activa y se informa la cancelacion sin cambiar la contrasena actual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo de cambio de contrasena en B2C;Se visualiza la pantalla del proveedor;;;;;;;;;;;
+;;;7;Seleccionar la opcion Cancelar en el flujo;El proveedor detiene el proceso;;;;;;;;;;;
+;;;8;Regresar al contexto de la Oficina Virtual;La sesion del usuario permanece activa;;;;;;;;;;;
+;;;9;Validar el mensaje mostrado;Se visualiza un mensaje informativo indicando que el proceso fue cancelado sin afectar la contrasena actual;;;;;;;;;;;
+;Test Case;Validar captura de contrasena actual solo en el flujo B2C;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La contrasena actual se captura y valida solo en B2C y no en componentes propios de la Oficina Virtual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo embebido de B2C;Se visualizan los campos administrados por el proveedor;;;;;;;;;;;
+;;;7;Validar el campo Contrasena actual y su procesamiento;La contrasena actual se captura y valida en B2C sin intervencion funcional propia de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar captura de nueva contrasena solo en el flujo B2C;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La nueva contrasena se captura y valida solo en B2C conforme a sus politicas de seguridad.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo embebido de B2C;Se visualizan los campos administrados por el proveedor;;;;;;;;;;;
+;;;7;Ingresar una nueva contrasena en el formulario de B2C;El proveedor procesa la nueva contrasena segun sus reglas de seguridad sin validaciones locales de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar confirmacion de nueva contrasena solo en el flujo B2C;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La confirmacion de nueva contrasena se captura y valida solo en B2C.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo embebido de B2C;Se visualizan los campos administrados por el proveedor;;;;;;;;;;;
+;;;7;Ingresar valores en Nueva contrasena y Confirmacion de nueva contrasena;B2C valida la coincidencia o inconsistencia de ambos campos sin validaciones locales de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar registro de auditoria del cambio de contrasena en Application Insights;;;;Por Analizar;Integracion;Positiva;PRE-04 servicio de auditoria ESD-187 implementado y disponible.;El evento de cambio de contrasena queda registrado con todos los atributos requeridos en auditoria.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Completar en B2C el cambio de contrasena con datos validos;El cambio de contrasena finaliza exitosamente;;;;;;;;;;;
+;;;7;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;8;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;9;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;10;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;11;En la tabla de traces buscar el log de auditoria del cambio de contrasena y validar Fecha de Registro, Canal web, Dispositivo, IP Publica, Usuario, Servicio, Verbo HTTP, Resultado HTTP, Estado exitoso e identificador unico;Se confirma que el log registra toda la informacion requerida para la accion exitosa de cambio de contrasena;;;;;;;;;;;
+;Test Case;Validar resiliencia cuando falla el registro de auditoria;;;;Por Analizar;Integracion;Negativa;PRE-01 Usuario autenticado con sesion activa.;Si falla la auditoria la operacion principal de cambio de contrasena no se interrumpe y el error queda en log tecnico.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Completar en B2C el cambio de contrasena con datos validos mientras el registro de auditoria falla;El cambio principal de contrasena finaliza exitosamente;;;;;;;;;;;
+;;;7;Validar el resultado funcional;Se muestra el mensaje de confirmacion y el sistema redirige al Home;;;;;;;;;;;
+;;;8;Revisar el log tecnico del sistema;El error de auditoria queda registrado sin afectar la operacion principal;;;;;;;;;;;
+;Test Case;Validar tiempo maximo de redireccion al flujo B2C;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La redireccion al flujo B2C se completa en un tiempo no mayor a 3 segundos en condiciones normales.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Iniciar la medicion de tiempo y seleccionar Cambiar contrasena;Se ejecuta la redireccion al flujo embebido de B2C;;;;;;;;;;;
+;;;7;Detener la medicion cuando el flujo de B2C queda visible;La redireccion se completa en un tiempo menor o igual a 3 segundos;;;;;;;;;;;
+;Test Case;Validar que la comunicacion con B2C se realiza por HTTPS;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La comunicacion entre Oficina Virtual y B2C usa protocolo HTTPS.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Seleccionar Cambiar contrasena;Se genera la comunicacion con el servicio B2C;;;;;;;;;;;
+;;;7;Inspeccionar el esquema de la solicitud y recursos asociados;Todas las comunicaciones al servicio B2C se realizan mediante HTTPS;;;;;;;;;;;
+;Test Case;Validar que el token de sesion se verifica antes de iniciar el flujo de cambio de contrasena;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa.;El sistema valida el token de sesion antes de permitir el inicio del flujo de cambio de contrasena.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Invalidar o expirar el token de sesion del usuario autenticado;La sesion queda invalida para operaciones seguras;;;;;;;;;;;
+;;;6;Navegar a Menu Mi perfil Cambiar contrasena;El sistema intenta iniciar la validacion previa al flujo;;;;;;;;;;;
+;;;7;Validar el resultado;El sistema impide iniciar el flujo de cambio de contrasena hasta contar con una sesion valida;;;;;;;;;;;
+;Test Case;Validar que no se registran contrasenas en logs ni componentes de la Oficina Virtual;;;;Por Analizar;Integracion;Negativa;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La Oficina Virtual no almacena ni registra la contrasena actual o nueva en logs ni componentes propios.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena y completar un cambio de contrasena en B2C;El proceso finaliza o retorna una respuesta de control;;;;;;;;;;;
+;;;6;Revisar logs tecnicos, trazas de cliente y elementos expuestos por la Oficina Virtual;No se registra ni expone la contrasena actual o nueva en ningun componente de la Oficina Virtual;;;;;;;;;;;
+;Test Case;Validar compatibilidad del flujo en navegadores soportados;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La funcionalidad opera correctamente en los navegadores soportados por la Oficina Virtual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA desde un navegador soportado;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;3;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion y permite ingresar al flujo;;;;;;;;;;;
+;;;4;Completar el flujo principal de cambio de contrasena;La funcionalidad opera correctamente en el navegador evaluado;;;;;;;;;;;
+;;;5;Repetir la validacion en Chrome, Firefox, Edge y Safari en versiones soportadas;La experiencia funcional se mantiene sin degradacion no permitida;;;;;;;;;;;
+;Test Case;Validar flujo responsive de Cambiar contrasena en aplicacion web;;;;Por Analizar;Integracion;Positiva;PRE-01 Usuario autenticado con sesion activa, PRE-02 servicio B2C disponible.;La funcionalidad de cambio de contrasena opera correctamente en vista responsive de la web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Cambiar la vista del navegador a una resolucion responsive soportada;La interfaz se adapta al nuevo tamano de pantalla;;;;;;;;;;;
+;;;6;Navegar a Menu Mi perfil Cambiar contrasena;Los elementos de navegacion y acceso se visualizan correctamente en responsive;;;;;;;;;;;
+;;;7;Ingresar al flujo embebido de B2C;El flujo de cambio de contrasena es usable y mantiene la correcta disposicion visual en responsive;;;;;;;;;;;
+;;;8;Validar botones, mensajes y campos visibles en resolucion mobile web;Los componentes conservan legibilidad, alineacion y usabilidad en vista responsive;;;;;;;;;;;
+;Test Case;Validar diseno de la pantalla y mensajes de Cambiar contrasena segun figma en desktop;;;;Por Analizar;Integracion;Positiva;PRE-05 disenos aprobados disponibles como referencia.;La pantalla, botones, mensajes y navegacion cumplen el diseno aprobado en desktop.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo y visualizar pantallas, botones, mensajes y navegacion;La interfaz coincide con el figma aprobado en iconos, colores, tipografia, alineacion y ubicacion de elementos en desktop;;;;;;;;;;;
+;Test Case;Validar diseno de la pantalla y mensajes de Cambiar contrasena en vista responsive mobile web segun figma;;;;Por Analizar;Integracion;Positiva;PRE-05 disenos aprobados disponibles como referencia.;La funcionalidad mantiene conformidad visual con el diseno aprobado en vista responsive mobile web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web Oficina Virtual ESSA en una resolucion mobile soportada;Se visualiza la pantalla Login adaptada a mobile web;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza la pantalla Home;;;;;;;;;;;
+;;;5;Navegar a Menu Mi perfil Cambiar contrasena;Se visualiza la opcion Cambiar contrasena;;;;;;;;;;;
+;;;6;Ingresar al flujo y visualizar pantallas, botones, mensajes y navegacion;La interfaz coincide con el figma aprobado en iconos, colores, tipografia, alineacion y ubicacion de elementos en vista responsive mobile web;;;;;;;;;;;

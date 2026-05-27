@@ -17,18 +17,22 @@ La salida final debe ser un archivo CSV delimitado por punto y coma almacenado e
 
 Ejemplo:
 
-`Archivo_Generado/Test Case HU Buscar un reporte de un daño ESD_46.csv`
+`Archivo_Generado/ ESD_46 Buscar un reporte de un daño.csv`
 
 ## Fuentes obligatorias
 
 Antes de generar el archivo, el agente debe usar estas fuentes en este orden:
 
 1. La historia de usuario o PRD indicado por el usuario. Esta es la fuente principal de verdad.
-2. Validar si hay un apartado dentro de la HU que se llame `Datos de Entrada / Salida` Si existe la sección dentro de la HU, leerlos todos como fuente complementaria obligatoria para validaciones de campos.
+
+2. Validar si hay un apartado dentro de la HU en los citerios de aceptacion que que se llame `Datos de Entrada / Salida` Si existe la sección dentro de la HU, leerlos todos como fuente complementaria obligatoria para validaciones de campos.
+
 3. El archivo de ejemplo correspondiente en la carpeta `Ejemplos`:
    - `Ejemplos/Test Case HU ESSA.csv`
 
-4. Si existe conflicto entre la HU y el ejemplo, prevalece la HU.
+4. Tomar el nombre del archivo generado del titulo que esta dentro de la HU.
+
+5. Si existe conflicto entre la HU y el ejemplo, prevalece la HU.
 
 Los ejemplos no deben copiarse ciegamente. Si el ejemplo contiene errores de encabezado, codificacion, duplicidad de columnas o inconsistencias, el agente debe corregirlos en la salida final.
 
@@ -38,8 +42,10 @@ Antes de construir el CSV, el agente debe confirmar solo lo necesario:
 
 1. El valor del `{Sprint HU}`.
 2. El valor del campo `Assigned To`.
+3. El valor del nombre  `{Nombre HU}`.
 
 - Si el Sprint de la historia puede inferirse claramente por el contenido o por la indicacion previa del usuario, no repreguntar.
+- Si el nombre de la historia puede inferirse claramente por el contenido o por la indicacion previa del usuario, no repreguntar.
 - Si el usuario no responde el valor del campo `Assigned To` colocar por defecto `XXXXX XXXXX`
 
 ## Comportamiento esperado
@@ -47,20 +53,45 @@ Antes de construir el CSV, el agente debe confirmar solo lo necesario:
 El agente debe:
 
 1. Leer la HU completa.
-2. Extraer la informcaión de validación de campos de entrada o salida solo si aplica y lo nombra en la HU
+
+2. Extraer la informcaión de validación de campos de entrada o salida solo si aplica y lo nombra en la HU.
+
 3. Identificar objetivo funcional, precondiciones, postcondiciones, actores, reglas de negocio, criterios de aceptacion, datos de entrada o salida, validaciones, excepciones y el Sprint de la HU cuando este indicado.
-4. Detectar si hay formularios, mensajes modales, toasts, tablas, filtros, permisos, auditoria o comportamiento responsive.
-5. Validar dentro de HU la seccion de  Datos de Entrada / Salida o de toda regla util para pruebas de campos, incluyendo obligatoriedad, caracteres permitidos, longitud minima, longitud maxima y observaciones.
-6. Leer el ejemplo de Test Case HU ESSA segun corresponda.
-7. Contruir los escenarios por separado de las pantallas o funcionaidades para la aplicación movil asi como los de version web cuando la hu lo nombre en version movil.
-8. Tomar como patron preferente de salida una estructura tipo v2: primero escenarios web completos y despues escenarios moviles equivalentes cuando la HU mencione movil.
-9. Convertir cada validacion identificada en la seccion Datos de Entrada / Salida en uno o mas escenarios explicitos e independientes cuando aplique.
-10. Construir escenarios separados por criterio de aceptacion y por validacion relevante, respetando el mismo orden de los criterios en la HU.
-11. Si existe funcionalidad tanto en web como en movil, replicar el set de escenarios funcionales y de validacion para ambos canales, salvo que la HU indique expresamente una diferencia de alcance.
-12. Generar los casos necesarios para que todo lo indicado en cada criterio quede cubierto en uno o mas escenarios.
-13. Crear el archivo final CSV dentro de `Archivo_Generado`.
-14. Colocar el nombre de archivo final CSV como se indico `ESD_{Numero HU} {Nombre HU}.csv`.
-15. Verificar el contenido antes de darlo por terminado.
+
+4. Tener en cuenta las reglas de negocio tambien para inclñuir en casos de prueba las validaciones que apliquen en relacion a cada criterio de aceptacion que menciona.
+
+5. Detectar si hay formularios, mensajes modales, toasts, tablas, filtros, permisos, auditoria o comportamiento responsive.
+
+6. Validar dentro de HU en criterios de aceptacionla seccion de  Datos de Entrada / Salida o de toda regla util para pruebas de campos, incluyendo obligatoriedad, caracteres permitidos, longitud minima, longitud maxima y observaciones.
+
+7. Leer el ejemplo de Test Case HU ESSA segun corresponda.
+
+8. Contruir los escenarios por separado de las pantallas o funcionaidades para la aplicación movil asi como los de version web cuando la hu lo nombre en version movil. tener en cuenta que primero todos los escenario de web y posterior de mobile no combinarlos.
+
+9. Tomar como patron preferente de salida una estructura: primero escenarios web completos y despues escenarios moviles equivalentes cuando la HU mencione movil.
+
+10. Convertir cada validacion identificada en la seccion Datos de Entrada / Salida en uno o mas escenarios explicitos e independientes cuando aplique.
+
+11. Construir escenarios separados por criterio de aceptacion y por validacion relevante, respetando el mismo orden de los criterios en la HU.
+
+12. Si existe funcionalidad tanto en web como en movil, replicar el set de escenarios funcionales y de validacion para ambos canales, salvo que la HU indique expresamente una diferencia de alcance.
+
+13. Generar los casos necesarios para que todo lo indicado en cada criterio quede cubierto en uno o mas escenarios.
+
+14. Crear el archivo final CSV dentro de `Archivo_Generado`.
+
+15. Colocar el nombre de archivo final CSV como se indico `ESD_{Numero HU} {Nombre HU}.csv`.
+
+16. Realizar los casos de prueba necesario que abarquen el contenido de los criterios de aceptacion vs las reglas de negocio + datos de entrada y salida.
+
+17. Todas las HU deben incluir al menos un escenario para validar el diseno de la pantalla segun el figma en deskop y al menos otro para mobile cuando aplique y lo mencione en los criterios de aceptacion.
+
+18.  Todas las HU deben incluir al menos un escenario para validar el flujo del deskop o aplicacion web en responsive.
+
+19. Hacer completola granulacion en validaciones funcionales, no funcionales, reglas de negocio, validacion campos y separar escenarios moviles.
+
+20. Verificar el contenido antes de darlo por terminado.
+
 
 ## Regla por defecto de salida esperada
 
@@ -70,8 +101,7 @@ Salvo instruccion contraria del usuario, el agente debe generar siempre la salid
 2. Si la HU menciona movil, replicar los escenarios funcionales principales de web en movil, ajustando solo navegacion, canal y contexto visual.
 3. Convertir las reglas del apartado `Datos de Entrada / Salida` en cobertura obligatoria de pruebas, aunque ya existan criterios similares en aceptacion.
 4. Cuando una validacion de campo exista en `Datos de Entrada / Salida`, priorizar crear un caso independiente para esa validacion antes de combinarla con otros objetivos.
-5. Mantener el orden de criterios de aceptacion, pero dentro de ese orden privilegiar una salida granular como la version v2.
-6. Si hay conflicto entre una salida compacta y una salida granular, preferir la salida granular.
+5.  Si hay conflicto entre una salida compacta y una salida granular, preferir la salida granular.
 
 ## Reglas de analisis de la HU
 
@@ -193,6 +223,10 @@ Regla operativa por defecto:
 - Si una HU nombra web y movil o habla de diseno aprobado para ambos, asumir que la salida esperada debe parecerse a la version v2: web completo primero y luego movil completo.
 - Replicar en movil los escenarios de acceso, visualizacion, validaciones de campos, flujo principal, mensajes, errores, auditoria y figma, siempre que el alcance funcional aplique.
 
+### Responsive
+
+1. Todas las HU deben incluir al menos un escenario para validar el flujo en responsive respecto a la aplicacion web en deskop.
+
 ### Diseno segun figma
 
 1. Todas las HU deben incluir al menos un escenario para validar el diseno de la pantalla segun el figma en deskop y al menos otro para mobile cuando aplique y lo mencione en los criterios de aceptacion.
@@ -249,7 +283,7 @@ Reglas fijas por fila cabecera de cada caso:
 - `Custom.AutomationSstatus` = `Por Analizar`
 - `Custom.TipodePruebas` = `Integracion`
 - `Custom.CategoriadePrueba` = solo `Positiva` o `Negativa`
-- `Custom.Precondiciones` = `Ambiente configurado y estable. Datos de prueba disponibles. Accesos y credenciales habilitadas.`
+- `Custom.Precondiciones` = tomar de la HU el apartado ##precondiciones y asociarlo al caso de prueba que corresponda.
 - `Custom.ResultadoGeneral` = resumen corto del resultado esperado del escenario, definido por el agente segun el objetivo del caso y saneado a ASCII
 - `Area Path` = `ESSA\Oficina virtual ESSA`
 - `Iteration Path` = `ESSA`

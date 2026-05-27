@@ -1,0 +1,106 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar acceso a Mis reportes web con cuentas vinculadas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con al menos una cuenta vinculada, funcionalidad Danos y PQRS > Danos y emergencias > Mis reportes habilitada, disenos UX/UI web disponibles y auditoria ESD-187 operativa.;El usuario accede a Mis reportes web y visualiza el desplegable de cuentas con busqueda y unica seleccion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS.;Se muestra el modulo Danos y PQRS.;;;;;;;;;;;
+;;;3;Seleccionar Danos y emergencias.;Se muestra el submenu Danos y emergencias.;;;;;;;;;;;
+;;;4;Seleccionar la opcion Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;5;Visualizar el desplegable de cuentas.;El desplegable permite busqueda, unica seleccion y lista numero de cuenta y alias de las cuentas vinculadas del usuario.;;;;;;;;;;;
+;Test Case;Validar obligatoriedad de seleccionar cuenta en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la Oficina Virtual ESSA, con al menos una cuenta vinculada, funcionalidad Danos y PQRS > Danos y emergencias > Mis reportes habilitada y disenos UX/UI web disponibles.;El sistema exige seleccionar una cuenta antes de consultar reportes en Mis reportes web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;No seleccionar ninguna cuenta en el desplegable.;La cuenta permanece sin seleccionar.;;;;;;;;;;;
+;;;4;Intentar continuar con la visualizacion de reportes.;El sistema no consulta reportes y exige seleccionar una cuenta vinculada.;;;;;;;;;;;
+;Test Case;Validar consulta de reportes web para cuenta seleccionada;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con al menos una cuenta vinculada, servicio SP7 Consulta por Trouble Ticket disponible, funcionalidad Mis reportes habilitada y auditoria ESD-187 operativa.;El sistema consulta SP7 con la cuenta seleccionada y muestra reportes web ordenados del mas reciente al mas antiguo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Buscar y seleccionar una cuenta vinculada en el desplegable.;La cuenta queda seleccionada.;;;;;;;;;;;
+;;;4;Esperar la consulta de reportes para la cuenta seleccionada.;El sistema invoca el servicio SP7 Consulta por Trouble Ticket con la cuenta seleccionada.;;;;;;;;;;;
+;;;5;Visualizar los reportes retornados.;Se muestran cards o filas con los reportes disponibles en orden cronologico descendente.;;;;;;;;;;;
+;Test Case;Validar limite maximo de cinco reportes en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con una cuenta vinculada que tiene mas de cinco reportes validos en SP7 y funcionalidad Mis reportes habilitada.;La vista web muestra solo los cinco reportes mas recientes de la cuenta seleccionada.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con mas de cinco reportes validos.;La cuenta queda seleccionada y se consulta SP7.;;;;;;;;;;;
+;;;4;Revisar la lista de reportes mostrados.;Se visualizan solo cinco reportes.;;;;;;;;;;;
+;;;5;Comparar el orden de los reportes mostrados.;Los cinco reportes corresponden a los mas recientes y no se muestran registros adicionales.;;;;;;;;;;;
+;Test Case;Validar mensaje cuando la cuenta no tiene reportes en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con una cuenta vinculada sin reportes asociados y funcionalidad Mis reportes habilitada.;El sistema informa que la cuenta no tiene reportes y centra los botones para crear un nuevo reporte.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta vinculada sin reportes asociados.;La cuenta queda seleccionada y se consulta SP7.;;;;;;;;;;;
+;;;4;Visualizar el resultado de la consulta.;No se muestra ninguna card ni listado de reportes.;;;;;;;;;;;
+;;;5;Revisar el contenido de la pantalla.;Se muestra un texto informativo indicando que la cuenta no tiene reportes disponibles y los botones para crear un nuevo reporte aparecen centrados segun el diseno.;;;;;;;;;;;
+;Test Case;Validar omision de reportes sin informacion suficiente en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con una cuenta vinculada cuyos ultimos reportes incluyen algunos sin informacion valida en SP7 y funcionalidad Mis reportes habilitada.;El sistema omite reportes con informacion insuficiente y continua mostrando hasta cinco reportes validos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta cuyos ultimos reportes incluyen registros con informacion insuficiente.;La cuenta queda seleccionada y se consulta SP7.;;;;;;;;;;;
+;;;4;Revisar los reportes procesados en la vista.;No se construyen cards para los reportes sin informacion valida.;;;;;;;;;;;
+;;;5;Contar los reportes visibles.;Se muestran unicamente los reportes con informacion valida, hasta un maximo de cinco, sin interrumpir el procesamiento.;;;;;;;;;;;
+;Test Case;Validar detalle de informacion de cada reporte en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con una cuenta vinculada que tiene reportes validos en SP7, funcionalidad Mis reportes habilitada y disenos UX/UI web disponibles.;Cada reporte web muestra en solo lectura todos los campos requeridos por la HU.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes validos.;La cuenta queda seleccionada y se muestran reportes.;;;;;;;;;;;
+;;;4;Revisar una card o fila de reporte.;Se visualizan numero de cuenta, numero de reporte, estado del reporte, fecha de solicitud, fecha de atencion, descripcion del dano y causa.;;;;;;;;;;;
+;;;5;Intentar editar la informacion mostrada.;Todos los datos permanecen en solo lectura y no permiten modificacion.;;;;;;;;;;;
+;Test Case;Validar visualizacion de fecha de atencion nula segun diseno en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, con una cuenta vinculada que tiene un reporte con fecha de cierre nula en SP7 y disenos UX/UI web disponibles.;La vista web muestra la fecha de atencion vacia o con el indicador definido en el diseno cuando TT.FechaCierre es nulo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;2
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con un reporte cuya fecha de atencion sea nula.;La cuenta queda seleccionada y se muestran reportes.;;;;;;;;;;;
+;;;4;Revisar el campo fecha de atencion del reporte afectado.;El campo se muestra vacio o con el indicador definido en el diseno, sin exponer errores.;;;;;;;;;;;
+;Test Case;Validar mensaje controlado ante error de integracion SP7 en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la Oficina Virtual ESSA, funcionalidad Mis reportes habilitada y entorno preparado para simular falla de integracion con SP7.;Ante una falla de integracion con SP7, el sistema muestra el mensaje definido al usuario sin detalles tecnicos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;2
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta vinculada cuando el servicio SP7 presenta falla controlada.;El sistema intenta consultar reportes para la cuenta seleccionada.;;;;;;;;;;;
+;;;4;Revisar el resultado mostrado al usuario.;Se presenta el mensaje definido para error de integracion sin exponer detalles tecnicos del servicio.;;;;;;;;;;;
+;Test Case;Validar acceso a Mis reportes movil con listado inicial de cards;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la app movil ESSA, con al menos una cuenta vinculada, funcionalidad equivalente Mis reportes habilitada, disenos UX/UI moviles disponibles y auditoria ESD-187 operativa.;El usuario accede a Mis reportes movil, selecciona una cuenta y visualiza hasta cinco cards de reportes.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la app movil ESSA con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes movil.;;;;;;;;;;;
+;;;3;Buscar y seleccionar una cuenta vinculada.;La cuenta queda seleccionada.;;;;;;;;;;;
+;;;4;Esperar la consulta de reportes para la cuenta seleccionada.;El sistema consulta SP7 y muestra una lista de cards con hasta cinco reportes disponibles.;;;;;;;;;;;
+;;;5;Revisar una card del listado.;Cada card muestra numero de cuenta, numero de reporte, estado del reporte, fecha de solicitud y fecha de atencion.;;;;;;;;;;;
+;Test Case;Validar disponibilidad de Ver detalles en cards moviles;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la app movil ESSA, con una cuenta vinculada que tiene reportes validos, funcionalidad Mis reportes habilitada y disenos UX/UI moviles disponibles.;Cada card movil incluye la opcion Ver detalles de forma visible y accesible.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la app movil ESSA con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes movil.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes validos.;La cuenta queda seleccionada y se muestran cards de reportes.;;;;;;;;;;;
+;;;4;Revisar cada card visible.;Cada card incluye la opcion o boton Ver detalles claramente identificable y accesible segun el diseno movil.;;;;;;;;;;;
+;Test Case;Validar apertura de detalle de reporte en movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la app movil ESSA, con una cuenta vinculada que tiene reportes validos, funcionalidad Mis reportes habilitada y auditoria ESD-187 operativa.;Al seleccionar Ver detalles, la app abre una pantalla de detalle del reporte seleccionado en solo lectura.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;1
+;;;1;Ingresar a la app movil ESSA con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes movil.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes validos.;La cuenta queda seleccionada y se muestran cards de reportes.;;;;;;;;;;;
+;;;4;Pulsar la opcion Ver detalles en una card.;Se abre una nueva pantalla con el detalle del reporte seleccionado.;;;;;;;;;;;
+;;;5;Revisar la informacion del detalle.;Se visualizan numero de cuenta, numero de reporte, estado del reporte, fecha de solicitud, fecha de atencion, descripcion del dano y observacion tecnica en solo lectura.;;;;;;;;;;;
+;;;6;Intentar editar la informacion mostrada.;La app no permite editar ninguna informacion del detalle.;;;;;;;;;;;
+;Test Case;Validar no disponibilidad de Ver detalles sin reportes en movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la app movil ESSA, con una cuenta vinculada sin reportes asociados y funcionalidad Mis reportes habilitada.;La app no muestra cards ni permite usar Ver detalles cuando no existen reportes para la cuenta seleccionada.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;2
+;;;1;Ingresar a la app movil ESSA con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes movil.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta sin reportes asociados.;La cuenta queda seleccionada y se consulta SP7.;;;;;;;;;;;
+;;;4;Revisar el resultado de la consulta.;No se muestran cards de reportes ni opcion Ver detalles.;;;;;;;;;;;
+;;;5;Verificar el contenido de la pantalla.;Se muestra el mensaje informativo de ausencia de reportes y los botones para crear un nuevo reporte centrados segun el diseno.;;;;;;;;;;;
+;Test Case;Validar auditoria de acceso y consulta en Mis reportes web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, funcionalidad Mis reportes habilitada y modulo de auditoria ESD-187 disponible.;Las acciones de acceso a Mis reportes y consulta por cuenta en web quedan registradas en auditoria con los datos requeridos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home.;Se visualiza el home de ESSA.;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights.;Se visualiza el menu y la informacion general.;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros.;Se visualiza modal Centro de consultas.;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla.;Se despliegan las tablas del Application Insights.;;;;;;;;;;;
+;;;5;Realizar en la Oficina Virtual ESSA web el acceso a Mis reportes y la seleccion de una cuenta para consultar reportes.;Las acciones quedan ejecutadas en el canal web.;;;;;;;;;;;
+;;;6;En la tabla de traces buscar el log de auditoria de acceso y consulta de Mis reportes y validar Fecha de Registro, Canal web, Dispositivo, Ip Publica, Usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico.;Se confirma que el log copia toda la informacion correspondiente a la accion validada.;;;;;;;;;;;
+;Test Case;Validar auditoria de Ver detalles en Mis reportes movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la app movil ESSA, con reportes disponibles, funcionalidad Mis reportes habilitada y modulo de auditoria ESD-187 disponible.;La accion Ver detalles en movil queda registrada en auditoria con el numero de reporte y contexto del usuario.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home.;Se visualiza el home de ESSA.;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights.;Se visualiza el menu y la informacion general.;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros.;Se visualiza modal Centro de consultas.;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla.;Se despliegan las tablas del Application Insights.;;;;;;;;;;;
+;;;5;Realizar en la app movil ESSA el acceso a Mis reportes, seleccionar una cuenta y pulsar Ver detalles en una card.;Las acciones quedan ejecutadas en el canal movil.;;;;;;;;;;;
+;;;6;En la tabla de traces buscar el log de auditoria de visualizacion de detalle y validar Fecha de Registro, Canal movil, Dispositivo, Ip Publica, Usuario, cuenta, numero de reporte, servicio, verbo HTTP, resultado HTTP, estado e identificador unico.;Se confirma que el log copia toda la informacion correspondiente a la accion validada.;;;;;;;;;;;
+;Test Case;Validar diseno Figma de Mis reportes web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, funcionalidad Mis reportes habilitada y disenos UX/UI web vigentes disponibles en Figma.;La pantalla Mis reportes web cumple el diseno aprobado en iconos, colores, tipografia, alineacion, textos y estructura visual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;3
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes web.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes disponibles.;La cuenta queda seleccionada y se visualiza el contenido de la pantalla.;;;;;;;;;;;
+;;;4;Comparar la pantalla con el diseno Figma aprobado.;Los iconos, colores, tipografia, alineacion, textos, espaciados y ubicacion de elementos coinciden con el diseno web.;;;;;;;;;;;
+;Test Case;Validar diseno Figma de Mis reportes movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la app movil ESSA, funcionalidad Mis reportes habilitada y disenos UX/UI moviles vigentes disponibles en Figma.;Las pantallas Mis reportes movil y detalle cumplen el diseno aprobado en iconos, colores, tipografia, alineacion, textos y estructura visual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;3
+;;;1;Ingresar a la app movil ESSA con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes movil.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes disponibles y abrir Ver detalles.;Se visualizan la lista de cards y la pantalla de detalle.;;;;;;;;;;;
+;;;4;Comparar ambas pantallas con el diseno Figma aprobado.;Los iconos, colores, tipografia, alineacion, textos, espaciados y ubicacion de elementos coinciden con el diseno movil.;;;;;;;;;;;
+;Test Case;Validar flujo responsive de Mis reportes web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la Oficina Virtual ESSA, funcionalidad Mis reportes habilitada, navegador compatible y disenos UX/UI web disponibles.;La pantalla Mis reportes web mantiene usabilidad, alineacion y legibilidad en vista responsive.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;zharyth salomon;Design;;3
+;;;1;Ingresar a la Oficina Virtual ESSA web con credenciales validas.;Se muestra la pantalla de inicio autenticada.;;;;;;;;;;;
+;;;2;Navegar a Danos y PQRS > Danos y emergencias > Mis reportes.;Se muestra la pantalla Mis reportes web.;;;;;;;;;;;
+;;;3;Seleccionar una cuenta con reportes disponibles.;La cuenta queda seleccionada y se visualizan reportes.;;;;;;;;;;;
+;;;4;Ajustar el navegador a una resolucion responsive soportada.;La pantalla adapta su estructura sin perder informacion relevante ni funcionalidad.;;;;;;;;;;;
+;;;5;Revisar textos, iconos, cards, botones y alineacion.;Los elementos permanecen visibles, legibles y usables segun el diseno responsive definido.;;;;;;;;;;;

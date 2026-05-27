@@ -1,0 +1,233 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar visualizacion de opcion Consultar estado solicitud de vinculacion en modulo Servicios;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a Oficina Virtual ESSA y al modulo Servicios.;La opcion Consultar estado solicitud de vinculacion se visualiza visible y accesible junto a Definir tipo de conexion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios y luego a vinculacion de clientes;Se visualiza el modulo vinculacion de clientes;;;;;;;;;;;
+;;;4;Observar las opciones disponibles del modulo;Se visualiza la opcion Consultar estado solicitud de vinculacion junto a Definir tipo de conexion de forma visible y accesible;;;;;;;;;;;
+;Test Case;Validar redireccion a pantalla de consulta con dos campos y boton Consultar;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a Oficina Virtual ESSA y al modulo Servicios.;La opcion redirige a una pantalla de consulta con Numero de cuenta, Numero de proceso y boton Consultar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios y luego a vinculacion de clientes;Se visualiza el modulo vinculacion de clientes;;;;;;;;;;;
+;;;4;Seleccionar la opcion Consultar estado solicitud de vinculacion;El sistema redirige a la pantalla de consulta;;;;;;;;;;;
+;;;5;Observar la pantalla de consulta;Se visualizan los campos Numero de cuenta y Numero de proceso y el boton Consultar;;;;;;;;;;;
+;Test Case;Validar campos Numero de cuenta y Numero de proceso obligatorios en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;Los campos obligatorios vacios se resaltan visualmente y no permiten completar la consulta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Dejar vacios los campos Numero de cuenta y Numero de proceso;Los campos permanecen sin informacion;;;;;;;;;;;
+;;;5;Intentar ejecutar la consulta con los campos vacios;Todos los campos vacios se resaltan con borde rojo acorde al UI kit y no permite continuar;;;;;;;;;;;
+;Test Case;Validar solo ingreso numerico en Numero de cuenta en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de cuenta permite unicamente digitos numericos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un valor numerico valido en el campo Numero de cuenta;El campo acepta solo digitos del 0 al 9;;;;;;;;;;;
+;;;5;Retirar el foco del campo;El valor numerico permanece visible sin alteraciones;;;;;;;;;;;
+;Test Case;Validar bloqueo de caracteres alfabeticos en Numero de cuenta en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de cuenta impide el ingreso de caracteres alfabeticos en tiempo real.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Intentar ingresar letras en el campo Numero de cuenta;No deja caracter especial ni alfabetico y mantiene solo digitos validos;;;;;;;;;;;
+;Test Case;Validar bloqueo de caracteres especiales en Numero de cuenta en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de cuenta impide el ingreso de caracteres especiales en tiempo real.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Intentar ingresar caracteres especiales en el campo Numero de cuenta;No deja caracter especial;;;;;;;;;;;
+;Test Case;Validar longitud maxima de 50 caracteres en Numero de cuenta en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de cuenta no permite exceder 50 caracteres.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar 50 digitos en el campo Numero de cuenta;El campo acepta el valor completo;;;;;;;;;;;
+;;;5;Intentar ingresar un digito adicional en el campo Numero de cuenta;No permite exceder la cantidad de caracteres;;;;;;;;;;;
+;Test Case;Validar solo ingreso numerico en Numero de proceso en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de proceso permite unicamente digitos numericos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un valor numerico valido en el campo Numero de proceso;El campo acepta solo digitos del 0 al 9;;;;;;;;;;;
+;;;5;Retirar el foco del campo;El valor numerico permanece visible sin alteraciones;;;;;;;;;;;
+;Test Case;Validar bloqueo de caracteres alfabeticos en Numero de proceso en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de proceso impide el ingreso de caracteres alfabeticos en tiempo real.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Intentar ingresar letras en el campo Numero de proceso;No deja caracter especial ni alfabetico y mantiene solo digitos validos;;;;;;;;;;;
+;Test Case;Validar bloqueo de caracteres especiales en Numero de proceso en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de proceso impide el ingreso de caracteres especiales en tiempo real.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Intentar ingresar caracteres especiales en el campo Numero de proceso;No deja caracter especial;;;;;;;;;;;
+;Test Case;Validar longitud maxima de 50 caracteres en Numero de proceso en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El campo Numero de proceso no permite exceder 50 caracteres.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar 50 digitos en el campo Numero de proceso;El campo acepta el valor completo;;;;;;;;;;;
+;;;5;Intentar ingresar un digito adicional en el campo Numero de proceso;No permite exceder la cantidad de caracteres;;;;;;;;;;;
+;Test Case;Validar boton Consultar deshabilitado hasta completar datos validos en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion.;El boton Consultar permanece deshabilitado hasta que ambos campos contienen informacion numerica valida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Observar el boton Consultar sin diligenciar campos;El boton Consultar se visualiza deshabilitado;;;;;;;;;;;
+;;;5;Ingresar un valor numerico valido solo en uno de los campos;El boton Consultar permanece deshabilitado;;;;;;;;;;;
+;;;6;Ingresar un valor numerico valido en ambos campos;El boton Consultar cambia a estado habilitado;;;;;;;;;;;
+;Test Case;Validar consulta exitosa y consumo del servicio ConsultarProceso en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion. Existen datos asociados a Numero de cuenta y Numero de proceso.;La consulta consume el servicio ConsultarProceso con los parametros ingresados y retorna informacion asociada.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con informacion asociada;Los campos aceptan los valores ingresados;;;;;;;;;;;
+;;;5;Seleccionar el boton Consultar;El sistema consume el servicio ConsultarProceso enviando Numero de cuenta y Numero de proceso;;;;;;;;;;;
+;;;6;Esperar la respuesta del servicio;El sistema presenta los resultados estructurados en pantalla;;;;;;;;;;;
+;Test Case;Validar visualizacion de resultados estructurados y solo lectura en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa.;La respuesta se muestra en formato estructurado y todos los datos son de solo lectura.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con informacion asociada y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la informacion retornada;Se muestran Numero de cuenta, Numero de proceso, Fecha de solicitud, Estado del tramite, Fecha maxima de respuesta y Observacion en formato estructurado;;;;;;;;;;;
+;;;6;Intentar editar los datos mostrados;Toda la informacion permanece en modo solo lectura sin posibilidad de modificacion;;;;;;;;;;;
+;Test Case;Validar visualizacion condicional de Fecha respuesta y Paso a seguir para estado Aprobado en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa con estado Aprobado.;Cuando el estado del tramite es Aprobado se muestran Fecha respuesta y Paso a seguir.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con respuesta en estado Aprobado y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la informacion condicional;Se muestran los campos Fecha respuesta y Paso a seguir;;;;;;;;;;;
+;;;6;Seleccionar el enlace u objeto interactivo Paso a seguir;El sistema redirige al formulario del siguiente paso asociado al nombre del paso;;;;;;;;;;;
+;Test Case;Validar visualizacion condicional de Fecha respuesta y Paso a seguir para estado No aprobado en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa con estado No aprobado.;Cuando el estado del tramite es No aprobado se muestran Fecha respuesta y Paso a seguir.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con respuesta en estado No aprobado y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la informacion condicional;Se muestran los campos Fecha respuesta y Paso a seguir;;;;;;;;;;;
+;;;6;Seleccionar el enlace u objeto interactivo Paso a seguir;El sistema redirige al formulario del siguiente paso asociado al nombre del paso;;;;;;;;;;;
+;Test Case;Validar ocultamiento de Fecha respuesta y Paso a seguir para estados distintos de Aprobado y No aprobado en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa con estado diferente a Aprobado y No aprobado.;Los campos condicionales no se muestran cuando el estado no cumple la condicion definida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con estado diferente a Aprobado y No aprobado y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la informacion condicional;No se muestran Fecha respuesta ni Paso a seguir;;;;;;;;;;;
+;Test Case;Validar visualizacion y descarga de Anexo de entrada en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa que retorna anexos de entrada.;Los anexos de entrada se muestran listados y permiten descarga.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con anexos de entrada y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la seccion Anexo de entrada;Los archivos se muestran listados bajo la solicitud;;;;;;;;;;;
+;;;6;Seleccionar un archivo de Anexo de entrada;El archivo inicia su descarga correctamente;;;;;;;;;;;
+;Test Case;Validar ocultamiento de Anexo de entrada cuando el servicio no retorna archivos en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa sin anexos de entrada.;La seccion Anexo de entrada se oculta cuando el servicio no retorna informacion en ese parametro.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido sin anexos de entrada y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la seccion de anexos;La seccion Anexo de entrada no se visualiza;;;;;;;;;;;
+;Test Case;Validar visualizacion y descarga de Anexo de salida en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa que retorna anexos de salida.;Los anexos de salida se muestran listados y permiten descarga.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido con anexos de salida y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la seccion Anexo de salida;Los archivos se muestran listados bajo la solicitud;;;;;;;;;;;
+;;;6;Seleccionar un archivo de Anexo de salida;El archivo inicia su descarga correctamente;;;;;;;;;;;
+;Test Case;Validar ocultamiento de Anexo de salida cuando el servicio no retorna archivos en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados de una consulta exitosa sin anexos de salida.;La seccion Anexo de salida se oculta cuando el servicio no retorna informacion en ese parametro.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido sin anexos de salida y seleccionar Consultar;Se visualiza la pantalla de resultados;;;;;;;;;;;
+;;;5;Observar la seccion de anexos;La seccion Anexo de salida no se visualiza;;;;;;;;;;;
+;Test Case;Validar mensaje No encontramos resultados cuando no existe informacion asociada en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion. El servicio retorna respuesta exitosa sin datos asociados.;El sistema muestra el mensaje No encontramos resultados y la accion Definir tipo de conexion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido sin informacion asociada y seleccionar Consultar;El sistema procesa la solicitud;;;;;;;;;;;
+;;;5;Observar el mensaje mostrado;Se visualiza el titulo No encontramos resultados y el cuerpo Revisa que el numero de solicitud y cuenta sean correctos.;;;;;;;;;;;
+;;;6;Seleccionar la accion Definir tipo de conexion;El sistema redirige a la funcionalidad Definir el tipo de conexion que necesita el cliente de la HU ESD-258;;;;;;;;;;;
+;Test Case;Validar mensaje No encontramos resultados cuando el servicio presenta error en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion. El servicio presenta error controlado.;El sistema muestra el mensaje No encontramos resultados y mantiene la opcion de nueva consulta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido y seleccionar Consultar con el servicio en error;El sistema procesa la solicitud;;;;;;;;;;;
+;;;5;Observar el mensaje mostrado;Se visualiza el titulo No encontramos resultados y el cuerpo Revisa que el numero de solicitud y cuenta sean correctos.;;;;;;;;;;;
+;;;6;Validar disponibilidad de los campos y del boton Consultar;La busqueda permanece visible y funcional para una nueva consulta sin recargar la pagina;;;;;;;;;;;
+;Test Case;Validar mensaje No encontramos resultados cuando el servicio presenta timeout en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion. El servicio presenta timeout.;El sistema muestra el mensaje No encontramos resultados y mantiene la opcion de nueva consulta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido y seleccionar Consultar con el servicio en timeout;El sistema procesa la solicitud;;;;;;;;;;;
+;;;5;Observar el mensaje mostrado;Se visualiza el titulo No encontramos resultados y el cuerpo Revisa que el numero de solicitud y cuenta sean correctos.;;;;;;;;;;;
+;;;6;Validar disponibilidad de los campos y del boton Consultar;La busqueda permanece visible y funcional para una nueva consulta sin recargar la pagina;;;;;;;;;;;
+;Test Case;Validar mensaje No encontramos resultados cuando el servicio esta indisponible en web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla Consultar estado solicitud de vinculacion. El servicio esta indisponible.;El sistema muestra el mensaje No encontramos resultados y mantiene la opcion de nueva consulta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido y seleccionar Consultar con el servicio indisponible;El sistema procesa la solicitud;;;;;;;;;;;
+;;;5;Observar el mensaje mostrado;Se visualiza el titulo No encontramos resultados y el cuerpo Revisa que el numero de solicitud y cuenta sean correctos.;;;;;;;;;;;
+;;;6;Validar disponibilidad de los campos y del boton Consultar;La busqueda permanece visible y funcional para una nueva consulta sin recargar la pagina;;;;;;;;;;;
+;Test Case;Validar nueva consulta despues de resultados en web sin recargar la pagina;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla de resultados de una consulta previa.;El usuario puede realizar una nueva consulta sin recargar la pagina.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Realizar una consulta valida y esperar la respuesta;Se visualizan resultados o mensaje segun corresponda;;;;;;;;;;;
+;;;5;Ingresar nuevos valores en Numero de cuenta y Numero de proceso;Los campos permanecen visibles y funcionales;;;;;;;;;;;
+;;;6;Seleccionar nuevamente el boton Consultar;El sistema ejecuta una nueva consulta sin recargar la pagina;;;;;;;;;;;
+;Test Case;Validar registro de auditoria ESD-187 para consulta de estado en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad y permisos para consultar Application Insights.;Cada accion realizada en la pantalla registra el evento de auditoria con la informacion requerida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Realizar una accion en la pantalla de consulta, por ejemplo ejecutar una consulta valida;La accion se procesa correctamente;;;;;;;;;;;
+;;;5;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;6;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;7;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;8;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;9;En la tabla de traces buscar el log de auditoria de la accion realizada y validar Fecha de Registro, Canal web, Dispositivo, Ip Publica, Usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log esta copiando toda la informacion correspondiente al evento generado;;;;;;;;;;;
+;Test Case;Validar flujo responsive de consulta de estado solicitud de vinculacion en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad desde navegador web redimensionable.;La funcionalidad conserva usabilidad y visualizacion correcta en responsive web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Cambiar el navegador a una resolucion responsive;Los campos, etiquetas, botones e iconos se reacomodan sin perder visibilidad ni funcionalidad;;;;;;;;;;;
+;;;5;Ejecutar una consulta valida en responsive;La consulta y la visualizacion de resultados funcionan correctamente sin solapamientos;;;;;;;;;;;
+;Test Case;Validar diseno de pantalla de consulta segun figma en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad y referencia de diseno aprobada para web.;La pantalla web respeta iconos, colores, tipografia, alineacion y ubicacion de elementos definidos en figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;El sistema inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta;;;;;;;;;;;
+;;;4;Comparar la pantalla de consulta con el diseno aprobado en figma para web;Los iconos, colores, tipografia, alineacion y ubicacion de elementos coinciden con el diseno aprobado;;;;;;;;;;;
+;;;5;Ejecutar una consulta valida y comparar la pantalla de resultados con figma;La vista de resultados mantiene consistencia visual con el diseno aprobado;;;;;;;;;;;
+;Test Case;Validar flujo principal de consulta exitosa en mobile;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la aplicacion movil ESSA y a la funcionalidad Consultar estado solicitud de vinculacion.;La aplicacion movil permite consultar el estado de solicitud y mostrar resultados estructurados.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido;Los campos aceptan la informacion ingresada;;;;;;;;;;;
+;;;5;Seleccionar el boton Consultar;La aplicacion consulta la informacion y presenta resultados estructurados de solo lectura;;;;;;;;;;;
+;Test Case;Validar ocultamiento de seccion de anexos de entrada sin archivos en mobile;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados movil de una consulta sin anexos de entrada.;La seccion de anexos de entrada se oculta en mobile cuando no existen archivos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido cuya respuesta no contiene anexos de entrada;La aplicacion presenta los resultados;;;;;;;;;;;
+;;;5;Observar la seccion de anexos;La seccion correspondiente a anexos de entrada no se visualiza;;;;;;;;;;;
+;Test Case;Validar ocultamiento de seccion de anexos de salida sin archivos en mobile;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados movil de una consulta sin anexos de salida.;La seccion de anexos de salida se oculta en mobile cuando no existen archivos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido cuya respuesta no contiene anexos de salida;La aplicacion presenta los resultados;;;;;;;;;;;
+;;;5;Observar la seccion de anexos;La seccion correspondiente a anexos de salida no se visualiza;;;;;;;;;;;
+;Test Case;Validar inhabilitacion de Ver anexos cuando no existen anexos de entrada ni salida en mobile;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la pantalla de resultados movil de una consulta sin anexos de entrada ni salida.;La opcion Ver anexos permanece inhabilitada cuando no existen anexos en mobile.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido cuya respuesta no contiene anexos de entrada ni salida;La aplicacion presenta los resultados;;;;;;;;;;;
+;;;5;Observar la opcion Ver anexos;La opcion Ver anexos se visualiza inhabilitada;;;;;;;;;;;
+;Test Case;Validar mensaje No encontramos resultados y nueva consulta en mobile;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con acceso a la aplicacion movil ESSA. El servicio retorna sin datos o con error para la consulta ejecutada.;La aplicacion movil muestra el mensaje esperado y permite una nueva consulta sin reiniciar la sesion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Ingresar un Numero de cuenta valido y un Numero de proceso valido y seleccionar Consultar sin obtener datos asociados;La aplicacion procesa la solicitud;;;;;;;;;;;
+;;;5;Observar el mensaje mostrado;Se visualiza el titulo No encontramos resultados y el cuerpo Revisa que el numero de solicitud y cuenta sean correctos.;;;;;;;;;;;
+;;;6;Ingresar nuevos valores y seleccionar Consultar nuevamente;La aplicacion permite realizar una nueva consulta sin cerrar ni recargar la pantalla;;;;;;;;;;;
+;Test Case;Validar registro de auditoria ESD-187 para consulta de estado en mobile;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad movil y permisos para consultar Application Insights.;Cada accion realizada en la pantalla movil registra el evento de auditoria con la informacion requerida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Realizar una accion en la pantalla, por ejemplo ejecutar una consulta valida;La accion se procesa correctamente;;;;;;;;;;;
+;;;5;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;6;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;7;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;8;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;9;En la tabla de traces buscar el log de auditoria de la accion realizada y validar Fecha de Registro, Canal mobile, Dispositivo, Ip Publica, Usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log esta copiando toda la informacion correspondiente al evento generado;;;;;;;;;;;
+;Test Case;Validar diseno de pantalla de consulta y resultados segun figma en mobile;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad movil y referencia de diseno aprobada para mobile.;La pantalla mobile respeta iconos, colores, tipografia, alineacion y ubicacion de elementos definidos en figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;XXXXX XXXXX;Design;;3
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar credenciales validas y seleccionar Ingresar;La aplicacion inicia sesion correctamente;;;;;;;;;;;
+;;;3;Navegar a Servicios, vinculacion de clientes y seleccionar Consultar estado solicitud de vinculacion;Se visualiza la pantalla de consulta movil;;;;;;;;;;;
+;;;4;Comparar la pantalla de consulta con el diseno aprobado en figma para mobile;Los iconos, colores, tipografia, alineacion y ubicacion de elementos coinciden con el diseno aprobado;;;;;;;;;;;
+;;;5;Ejecutar una consulta valida y comparar la pantalla de resultados con figma;La vista de resultados mantiene consistencia visual con el diseno aprobado;;;;;;;;;;;

@@ -1,0 +1,177 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority;;
+;Test Case;Validar acceso a opcion Cerrar sesion en web desde cualquier pantalla;;; ;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible desde todas las pantallas, PRE-05 Conectividad de red activa.;El usuario visualiza la opcion Cerrar sesion en web desde cualquier pantalla disponible del flujo y puede acceder a ella desde Mi perfil.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla funcional cualquiera del aplicativo.;La pantalla seleccionada se muestra con la sesion activa.;;;;;;;;;;;;;
+;;;3;Abrir el menu Mi perfil desde el footer de la app.;Se despliega el menu de opciones del perfil en web.;;;;;;;;;;;;;
+;;;4;Ubicar la opcion Cerrar sesion dentro del menu Mi perfil.;La opcion Cerrar sesion se visualiza visible, accesible y habilitada.;;;;;;;;;;;;;
+;Test Case;Validar visualizacion del modal de confirmacion en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;Al seleccionar Cerrar sesion en web se muestra un modal de confirmacion con mensaje claro y acciones Confirmar y Cancelar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla donde este disponible Mi perfil.;La pantalla objetivo se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar la opcion Cerrar sesion.;El sistema procesa la solicitud de cierre de sesion.;;;;;;;;;;;;;
+;;;4;Validar el contenido del dialogo de confirmacion mostrado.;Se muestra un modal con mensaje claro para confirmar el cierre y con botones Confirmar y Cancelar visibles.;;;;;;;;;;;;;
+;Test Case;Validar cierre de sesion local en web al confirmar;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-03 Opcion Cerrar sesion visible, PRE-05 Conectividad de red activa.;Al confirmar el cierre en web el sistema invalida la sesion local eliminando tokens, cookies y datos de sesion almacenados.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla protegida con sesion activa.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar Cerrar sesion.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar la opcion Confirmar en el modal.;El sistema inicia el proceso de cierre de sesion.;;;;;;;;;;;;;
+;;;5;Validar el almacenamiento local, cookies y tokens asociados a la sesion.;Los datos de sesion quedan eliminados e invalidados localmente.;;;;;;;;;;;;;
+;Test Case;Validar notificacion a B2C en web para sesion autenticada por proveedor;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible y operativo, PRE-05 Conectividad de red activa.;Luego de invalidar la sesion local en web el sistema notifica el cierre de sesion al proveedor B2C cuando aplica.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion B2C activa.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar Cerrar sesion.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar Confirmar para cerrar la sesion.;El sistema invalida la sesion local.;;;;;;;;;;;;;
+;;;5;Monitorear la solicitud enviada al servicio B2C.;Se envia la notificacion de cierre al proveedor de identidad mediante canal seguro.;;;;;;;;;;;;;
+;Test Case;Validar redireccion a login en web despues de cierre exitoso;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-05 Conectividad de red activa.;Luego del cierre exitoso en web el usuario es redirigido automaticamente a la pantalla de login.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil, seleccionar Cerrar sesion y confirmar la accion.;El sistema procesa el cierre de sesion.;;;;;;;;;;;;;
+;;;4;Observar la navegacion al finalizar el proceso.;El usuario es redirigido a la pantalla de inicio de sesion.;;;;;;;;;;;;;
+;Test Case;Validar bloqueo de acceso por URL o boton atras en web tras cerrar sesion;;;;;;Por Analizar;Integracion;Negativa;PRE-01 Sesion activa valida, PRE-05 Conectividad de red activa.;Despues del cierre de sesion en web el usuario no puede acceder a funcionalidades protegidas por URL directa ni con el boton atras.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida y copiar la URL de acceso.;La URL de la pantalla protegida queda disponible para la validacion.;;;;;;;;;;;;;
+;;;3;Cerrar la sesion desde Mi perfil y confirmar la accion.;El usuario es redirigido al login.;;;;;;;;;;;;;
+;;;4;Ingresar manualmente la URL protegida en el navegador.;El sistema redirige al login sin permitir acceso a la funcionalidad protegida.;;;;;;;;;;;;;
+;;;5;Presionar el boton atras del navegador.;El sistema mantiene el bloqueo y redirige nuevamente al login si intenta mostrar una vista protegida.;;;;;;;;;;;;;
+;Test Case;Validar cancelacion del cierre de sesion en web preservando estado;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;Al cancelar el cierre en web el modal se cierra y la sesion permanece activa preservando la informacion y el estado de la pantalla.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla con informacion o formulario en curso.;La pantalla mantiene informacion visible o datos diligenciados.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar Cerrar sesion.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar la opcion Cancelar en el modal.;El modal se cierra sin cerrar la sesion.;;;;;;;;;;;;;
+;;;5;Validar el estado de la pantalla y la informacion previa.;La sesion sigue activa y se conserva el contexto, formularios y navegacion previa.;;;;;;;;;;;;;
+;Test Case;Validar registro de auditoria exitoso por cierre de sesion en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;El cierre exitoso de sesion en web genera un registro de auditoria con fecha, hora, correo, IP y resultado Exitoso.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Cerrar la sesion desde Mi perfil y confirmar la accion.;El sistema completa el cierre de sesion y redirige al login.;;;;;;;;;;;;;
+;;;4;Consultar el registro de auditoria generado para el evento.;El registro contiene fecha y hora, correo electronico, direccion IP de origen y resultado Exitoso.;;;;;;;;;;;;;
+;Test Case;Validar cierre local y auditoria fallida cuando falla B2C en web;;;;;;Por Analizar;Integracion;Negativa;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;Si falla la comunicacion con B2C en web el sistema invalida la sesion local, registra auditoria con resultado Fallido y redirige al login.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion activa.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Forzar un fallo de comunicacion con el servicio B2C.;La condicion de error queda preparada para la validacion.;;;;;;;;;;;;;
+;;;4;Abrir Mi perfil, seleccionar Cerrar sesion y confirmar la accion.;El sistema invalida la sesion local aunque falle la notificacion externa.;;;;;;;;;;;;;
+;;;5;Validar la redireccion y el registro de auditoria.;El usuario es redirigido al login y el evento se registra con resultado Fallido.;;;;;;;;;;;;;
+;Test Case;Validar opcion Confirmar como unica accion valida de entrada en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible, PRE-05 Conectividad de red activa.;La accion Confirmar es una opcion valida del modal y ejecuta el flujo esperado de cierre de sesion en web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar Cerrar sesion.;Se muestra el modal de confirmacion con acciones disponibles.;;;;;;;;;;;;;
+;;;4;Seleccionar Confirmar.;El sistema acepta la accion como valida y ejecuta el cierre de sesion.;;;;;;;;;;;;;
+;Test Case;Validar opcion Cancelar como unica accion valida de entrada en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible, PRE-05 Conectividad de red activa.;La accion Cancelar es una opcion valida del modal y mantiene la sesion activa en web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Abrir Mi perfil y seleccionar Cerrar sesion.;Se muestra el modal de confirmacion con acciones disponibles.;;;;;;;;;;;;;
+;;;4;Seleccionar Cancelar.;El sistema acepta la accion como valida y conserva la sesion activa.;;;;;;;;;;;;;
+;Test Case;Validar disponibilidad de token de sesion activa previo al cierre en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-05 Conectividad de red activa.;Previo al cierre en web existe un token de sesion valido y vigente asociado a la sesion del usuario.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Inspeccionar el token de sesion almacenado antes de cerrar sesion.;Se identifica un token valido y vigente asociado a la sesion activa.;;;;;;;;;;;;;
+;Test Case;Validar formato de correo electronico registrado en auditoria web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;El correo almacenado en la auditoria del cierre de sesion en web corresponde a un formato valido obtenido desde la sesion activa.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Cerrar la sesion desde Mi perfil confirmando la accion.;El sistema finaliza la sesion y redirige al login.;;;;;;;;;;;;;
+;;;3;Consultar el registro de auditoria del evento generado.;Se visualiza un correo electronico valido correspondiente al usuario autenticado.;;;;;;;;;;;;;
+;Test Case;Validar formato de direccion IP registrado en auditoria web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;La auditoria del cierre de sesion en web registra una direccion IP con formato IPv4 o IPv6 valido.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Cerrar la sesion desde Mi perfil confirmando la accion.;El sistema finaliza la sesion y redirige al login.;;;;;;;;;;;;;
+;;;3;Consultar el registro de auditoria del evento generado.;Se visualiza una direccion IP valida en formato IPv4 o IPv6.;;;;;;;;;;;;;
+;Test Case;Validar formato ISO 8601 de fecha y hora en auditoria web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;La fecha y hora registradas en la auditoria del cierre de sesion en web cumplen el formato ISO 8601.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Cerrar la sesion desde Mi perfil confirmando la accion.;El sistema finaliza la sesion y redirige al login.;;;;;;;;;;;;;
+;;;3;Consultar el registro de auditoria del evento generado.;La fecha y hora del evento se almacenan en formato ISO 8601.;;;;;;;;;;;;;
+;Test Case;Validar presencia de identificador de sesion B2C cuando aplica en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible, PRE-05 Conectividad de red activa.;Cuando la autenticacion proviene de B2C existe un identificador de sesion B2C disponible para ejecutar y rastrear el cierre en web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion B2C activa.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Inspeccionar la informacion de sesion antes del cierre.;Se identifica el identificador de sesion B2C requerido para el proceso.;;;;;;;;;;;;;
+;Test Case;Validar rendimiento del modal de confirmacion en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible, PRE-05 Conectividad de red activa.;El modal de confirmacion en web se renderiza en menos de 500 milisegundos despues de seleccionar Cerrar sesion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla con acceso a Mi perfil.;La pantalla objetivo se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Medir el tiempo desde seleccionar Cerrar sesion hasta que aparezca el modal.;El dialogo de confirmacion se muestra en menos de 500 milisegundos.;;;;;;;;;;;;;
+;Test Case;Validar tiempo maximo del proceso de cierre en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-05 Conectividad de red activa.;El cierre de sesion completo en web no supera 3 segundos en condiciones normales de conectividad.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida con sesion activa.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Medir el tiempo desde confirmar el cierre hasta la redireccion al login.;El proceso total de invalidacion local, notificacion B2C y redireccion finaliza en 3 segundos o menos.;;;;;;;;;;;;;
+;Test Case;Validar eliminacion irreversible de tokens y cookies en web;;;;;;Por Analizar;Integracion;Negativa;PRE-01 Sesion activa valida, PRE-05 Conectividad de red activa.;Despues del cierre en web no es posible recuperar ni reutilizar tokens, cookies o datos de sesion eliminados.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Cerrar la sesion desde Mi perfil confirmando la accion.;El sistema invalida y elimina la sesion local.;;;;;;;;;;;;;
+;;;3;Intentar recuperar o reutilizar tokens, cookies o datos eliminados.;No es posible reutilizar la sesion ni acceder a recursos protegidos con datos expirados.;;;;;;;;;;;;;
+;Test Case;Validar uso de canal seguro para notificacion B2C en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible, PRE-05 Conectividad de red activa.;La solicitud de cierre enviada a B2C en web utiliza un canal HTTPS o TLS seguro.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion B2C activa.;;;;;;;;;;;;;
+;;;2;Iniciar el cierre de sesion y confirmar la accion.;El sistema procesa la invalidacion local y la notificacion externa.;;;;;;;;;;;;;
+;;;3;Inspeccionar el protocolo de la comunicacion enviada al proveedor.;La solicitud a B2C se transmite por un canal HTTPS o TLS seguro.;;;;;;;;;;;;;
+;Test Case;Validar accesibilidad por teclado del cierre de sesion en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;La opcion Cerrar sesion y el modal de confirmacion en web son accesibles con teclado y compatibles con lector de pantalla.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Usar la tecla Tab hasta enfocar Mi perfil y la opcion Cerrar sesion.;El foco navega correctamente y permite activar la opcion con teclado.;;;;;;;;;;;;;
+;;;3;Abrir el modal de confirmacion y recorrer sus controles con Tab y Shift Tab.;El foco permanece dentro del modal y alcanza botones y contenido relevantes.;;;;;;;;;;;;;
+;;;4;Activar Confirmar con Enter y cerrar el modal con Escape en una nueva ejecucion.;Las teclas ejecutan las acciones esperadas y los controles exponen atributos accesibles para lector de pantalla.;;;;;;;;;;;;;
+;Test Case;Validar flujo responsive de cierre de sesion en web;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;En resoluciones responsive web la opcion Cerrar sesion y su modal mantienen funcionalidad y disposicion correcta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Cambiar el navegador a una resolucion responsive soportada.;La interfaz se adapta al ancho definido sin perder elementos.;;;;;;;;;;;;;
+;;;3;Navegar a Mi perfil y seleccionar Cerrar sesion.;La opcion sigue visible y funcional en modo responsive.;;;;;;;;;;;;;
+;;;4;Validar el modal de confirmacion y completar un cierre exitoso.;El modal se visualiza correctamente y el flujo redirige al login sin errores de disposicion.;;;;;;;;;;;;;
+;Test Case;Validar diseno de cierre de sesion en web segun referencia UX;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible.;Los elementos visuales del cierre de sesion en web coinciden con la referencia de diseno aprobada para menu y modal.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA con credenciales validas.;Carga la pantalla de inicio de la oficina virtual.;;;;;;;;;;;;;
+;;;2;Navegar a Mi perfil y abrir el modal de Cerrar sesion.;Se muestran la opcion de menu y el dialogo de confirmacion.;;;;;;;;;;;;;
+;;;3;Comparar iconos, colores, tipografia, alineacion y ubicacion de elementos contra la referencia UX vigente.;La opcion de menu, botones, textos e iconos coinciden con el diseno aprobado para web.;;;;;;;;;;;;;
+;Test Case;Validar acceso a opcion Cerrar sesion en mobile desde cualquier pantalla;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible desde todas las pantallas, PRE-05 Conectividad de red activa.;El usuario visualiza la opcion Cerrar sesion en mobile desde cualquier pantalla disponible del flujo y puede acceder a ella desde la barra inferior.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla funcional cualquiera de la aplicacion.;La pantalla seleccionada se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Ubicar el menu de la barra inferior.;La barra inferior se visualiza disponible en la pantalla.;;;;;;;;;;;;;
+;;;4;Ubicar la opcion Cerrar sesion desde el acceso correspondiente del menu inferior.;La opcion Cerrar sesion se visualiza visible, accesible y habilitada.;;;;;;;;;;;;;
+;Test Case;Validar visualizacion del modal de confirmacion en mobile;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;Al seleccionar Cerrar sesion en mobile se muestra un modal de confirmacion con mensaje claro y acciones Confirmar y Cancelar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla donde este disponible la barra inferior.;La pantalla objetivo se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Seleccionar la opcion Cerrar sesion desde el menu correspondiente.;El sistema procesa la solicitud de cierre de sesion.;;;;;;;;;;;;;
+;;;4;Validar el contenido del dialogo de confirmacion mostrado.;Se muestra un modal con mensaje claro para confirmar el cierre y con botones Confirmar y Cancelar visibles.;;;;;;;;;;;;;
+;Test Case;Validar cierre de sesion local en mobile al confirmar;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-05 Conectividad de red activa.;Al confirmar el cierre en mobile el sistema invalida la sesion local eliminando tokens, cookies y datos de sesion almacenados.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla protegida con sesion activa.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Seleccionar Cerrar sesion desde el menu disponible.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar la opcion Confirmar en el modal.;El sistema inicia el proceso de cierre de sesion.;;;;;;;;;;;;;
+;;;5;Validar el almacenamiento local, cookies y tokens asociados a la sesion.;Los datos de sesion quedan eliminados e invalidados localmente.;;;;;;;;;;;;;
+;Test Case;Validar notificacion a B2C en mobile para sesion autenticada por proveedor;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible y operativo, PRE-05 Conectividad de red activa.;Luego de invalidar la sesion local en mobile el sistema notifica el cierre de sesion al proveedor B2C cuando aplica.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion mobile ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion B2C activa en mobile.;;;;;;;;;;;;;
+;;;2;Navegar hasta una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Seleccionar Cerrar sesion desde el menu disponible.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar Confirmar para cerrar la sesion.;El sistema invalida la sesion local.;;;;;;;;;;;;;
+;;;5;Monitorear la solicitud enviada al servicio B2C.;Se envia la notificacion de cierre al proveedor de identidad mediante canal seguro.;;;;;;;;;;;;;
+;Test Case;Validar redireccion a login en mobile despues de cierre exitoso;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-05 Conectividad de red activa.;Luego del cierre exitoso en mobile el usuario es redirigido automaticamente a la pantalla de login.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Seleccionar Cerrar sesion y confirmar la accion.;El sistema procesa el cierre de sesion.;;;;;;;;;;;;;
+;;;4;Observar la navegacion al finalizar el proceso.;El usuario es redirigido a la pantalla de inicio de sesion.;;;;;;;;;;;;;
+;Test Case;Validar bloqueo de acceso posterior en mobile tras cerrar sesion;;;;;;Por Analizar;Integracion;Negativa;PRE-01 Sesion activa valida, PRE-05 Conectividad de red activa.;Despues del cierre de sesion en mobile el usuario no puede acceder a funcionalidades protegidas sin autenticarse de nuevo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Cerrar la sesion confirmando la accion.;El usuario es redirigido al login.;;;;;;;;;;;;;
+;;;4;Intentar regresar a la funcionalidad protegida mediante navegacion de la aplicacion.;El sistema redirige al login sin permitir acceso a la funcionalidad protegida.;;;;;;;;;;;;;
+;Test Case;Validar cancelacion del cierre de sesion en mobile preservando estado;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;Al cancelar el cierre en mobile el modal se cierra y la sesion permanece activa preservando la informacion y el estado de la pantalla.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla con informacion o formulario en curso.;La pantalla mantiene informacion visible o datos diligenciados.;;;;;;;;;;;;;
+;;;3;Seleccionar Cerrar sesion desde el menu disponible.;Se muestra el modal de confirmacion.;;;;;;;;;;;;;
+;;;4;Seleccionar la opcion Cancelar en el modal.;El modal se cierra sin cerrar la sesion.;;;;;;;;;;;;;
+;;;5;Validar el estado de la pantalla y la informacion previa.;La sesion sigue activa y se conserva el contexto, formularios y navegacion previa.;;;;;;;;;;;;;
+;Test Case;Validar registro de auditoria exitoso por cierre de sesion en mobile;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;El cierre exitoso de sesion en mobile genera un registro de auditoria con fecha, hora, correo, IP y resultado Exitoso.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra con sesion activa.;;;;;;;;;;;;;
+;;;3;Cerrar la sesion y confirmar la accion.;El sistema completa el cierre de sesion y redirige al login.;;;;;;;;;;;;;
+;;;4;Consultar el registro de auditoria generado para el evento.;El registro contiene fecha y hora, correo electronico, direccion IP de origen y resultado Exitoso.;;;;;;;;;;;;;
+;Test Case;Validar cierre local y auditoria fallida cuando falla B2C en mobile;;;;;;Por Analizar;Integracion;Negativa;PRE-01 Sesion activa valida, PRE-04 Servicio de auditoria disponible, PRE-05 Conectividad de red activa.;Si falla la comunicacion con B2C en mobile el sistema invalida la sesion local, registra auditoria con resultado Fallido y redirige al login.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con una cuenta autenticada por B2C.;La oficina virtual carga con sesion activa.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida del aplicativo.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Forzar un fallo de comunicacion con el servicio B2C.;La condicion de error queda preparada para la validacion.;;;;;;;;;;;;;
+;;;4;Seleccionar Cerrar sesion y confirmar la accion.;El sistema invalida la sesion local aunque falle la notificacion externa.;;;;;;;;;;;;;
+;;;5;Validar la redireccion y el registro de auditoria.;El usuario es redirigido al login y el evento se registra con resultado Fallido.;;;;;;;;;;;;;
+;Test Case;Validar rendimiento del modal de confirmacion en mobile;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible, PRE-05 Conectividad de red activa.;El modal de confirmacion en mobile se renderiza en menos de 500 milisegundos despues de seleccionar Cerrar sesion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla con acceso al menu inferior.;La pantalla objetivo se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Medir el tiempo desde seleccionar Cerrar sesion hasta que aparezca el modal.;El dialogo de confirmacion se muestra en menos de 500 milisegundos.;;;;;;;;;;;;;
+;Test Case;Validar tiempo maximo del proceso de cierre en mobile;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-02 Servicio B2C disponible cuando aplique, PRE-05 Conectividad de red activa.;El cierre de sesion completo en mobile no supera 3 segundos en condiciones normales de conectividad.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar a una pantalla protegida con sesion activa.;La pantalla protegida se muestra correctamente.;;;;;;;;;;;;;
+;;;3;Medir el tiempo desde confirmar el cierre hasta la redireccion al login.;El proceso total de invalidacion local, notificacion B2C y redireccion finaliza en 3 segundos o menos.;;;;;;;;;;;;;
+;Test Case;Validar accesibilidad del cierre de sesion en mobile con soporte del sistema;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible, PRE-05 Conectividad de red activa.;La opcion Cerrar sesion y el modal en mobile son utilizables con ayudas de accesibilidad del sistema operativo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Activar el lector de pantalla o ayuda de accesibilidad del dispositivo.;La ayuda de accesibilidad queda activa para la validacion.;;;;;;;;;;;;;
+;;;3;Navegar hasta la opcion Cerrar sesion y activar el modal.;Los elementos relevantes se anuncian correctamente y permiten interaccion.;;;;;;;;;;;;;
+;;;4;Recorrer botones del modal y ejecutar Cancelar en una validacion y Confirmar en otra.;Las acciones son accesibles y ejecutan el comportamiento esperado.;;;;;;;;;;;;;
+;Test Case;Validar diseno de cierre de sesion en mobile segun referencia UX;;;;;;Por Analizar;Integracion;Positiva;PRE-01 Sesion activa valida, PRE-03 Opcion Cerrar sesion visible y accesible.;Los elementos visuales del cierre de sesion en mobile coinciden con la referencia de diseno aprobada para menu y modal.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion mobile ESSA con credenciales validas.;Carga la pantalla inicial de la oficina virtual en mobile.;;;;;;;;;;;;;
+;;;2;Navegar al acceso de Cerrar sesion y abrir el modal de confirmacion.;Se muestran la opcion de menu y el dialogo de confirmacion.;;;;;;;;;;;;;
+;;;3;Comparar iconos, colores, tipografia, alineacion y ubicacion de elementos contra la referencia UX disponible para mobile.;La opcion de menu, botones, textos e iconos coinciden con el diseno aprobado para mobile o con la referencia entregada para la historia.;;;;;;;;;;;;;

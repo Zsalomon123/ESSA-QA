@@ -1,0 +1,182 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar redireccion obligatoria a Actualizar datos en primer inicio;;;;Por Analizar;Integracion;Positiva;Usuario con credenciales validas, marcado como primer inicio de sesion y con acceso a Oficina Virtual ESSA.;El sistema redirige de forma obligatoria a Actualizar datos y bloquea el acceso a otras secciones hasta finalizar o cancelar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Validar la redireccion automatica al primer inicio;El sistema redirige obligatoriamente a la pantalla Actualizar datos del usuario;;;;;;;;;;;
+;;;7;Intentar acceder a otra seccion del portal sin finalizar el proceso;El acceso a otras secciones permanece bloqueado hasta finalizar o cancelar el proceso;;;;;;;;;;;
+;Test Case;Validar acceso posterior por Menu a Actualizar datos;;;;Por Analizar;Integracion;Positiva;Usuario con credenciales validas y con primer inicio ya completado.;El usuario accede a la funcionalidad mediante la ruta Menu, Mi perfil, Actualizar datos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Seleccionar la opcion Menu;Se despliega el menu de navegacion;;;;;;;;;;;
+;;;7;Seleccionar Mi perfil;Se visualizan las opciones del perfil;;;;;;;;;;;
+;;;8;Seleccionar Actualizar datos;Se visualiza el formulario Actualizar datos con la informacion actual precargada;;;;;;;;;;;
+;Test Case;Validar datos precargados y campos no editables para Persona Natural;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Natural con datos registrados y con acceso al formulario Actualizar datos.;El formulario muestra datos actuales precargados y los campos definidos como no editables no permiten modificacion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Natural;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar el tipo de persona Persona Natural;Se visualizan los campos correspondientes a Persona Natural;;;;;;;;;;;
+;;;8;Validar la informacion precargada en nombres, apellidos, tipo de documento y numero de documento;Los datos actuales se muestran precargados;;;;;;;;;;;
+;;;9;Intentar editar nombres, apellidos, tipo de documento y numero de documento;Los campos no permiten edicion;;;;;;;;;;;
+;Test Case;Validar dependencia de Departamento y Municipio de expedicion para Persona Natural;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Natural autenticado en la pantalla Actualizar datos.;El municipio de expedicion permanece deshabilitado hasta seleccionar departamento y solo muestra municipios asociados.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Natural;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Natural;Se visualizan los campos de informacion basica;;;;;;;;;;;
+;;;8;Visualizar el campo Municipio de expedicion antes de seleccionar departamento;El campo permanece deshabilitado;;;;;;;;;;;
+;;;9;Seleccionar un departamento de expedicion valido;El campo Municipio de expedicion se habilita;;;;;;;;;;;
+;;;10;Desplegar la lista de municipios de expedicion;Solo se muestran municipios asociados al departamento seleccionado;;;;;;;;;;;
+;Test Case;Validar edicion exitosa de informacion basica para Persona Natural;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Natural autenticado con acceso al formulario y listas parametrizadas disponibles.;El sistema permite diligenciar campos editables obligatorios de Persona Natural y habilita Continuar con informacion valida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Natural;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Natural;Se visualizan los campos de Persona Natural;;;;;;;;;;;
+;;;8;Seleccionar valores validos en departamento y municipio de expedicion, genero, ocupacion, nivel de escolaridad, estado civil y edad;Los campos quedan diligenciados correctamente;;;;;;;;;;;
+;;;9;Ingresar una fecha de nacimiento valida con formato DD/MM/AAAA;La fecha queda registrada con formato valido;;;;;;;;;;;
+;;;10;Validar el estado del boton Continuar;El boton Continuar queda habilitado cuando los campos obligatorios editables tienen informacion valida;;;;;;;;;;;
+;Test Case;Validar datos precargados y campos no editables para Persona Juridica;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Juridica con datos registrados y con acceso al formulario Actualizar datos.;El formulario muestra datos actuales precargados, tipo de documento por defecto NIT y campos definidos como no editables sin permitir modificacion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Juridica;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Juridica;Se visualizan los campos correspondientes a Persona Juridica;;;;;;;;;;;
+;;;8;Validar la informacion precargada en razon social, nombre del representante legal, tipo de documento y numero de documento;Los datos actuales se muestran precargados y el tipo de documento carga NIT por defecto;;;;;;;;;;;
+;;;9;Intentar editar razon social, nombre del representante legal, tipo de documento y numero de documento;Los campos no permiten edicion;;;;;;;;;;;
+;Test Case;Validar edicion exitosa de informacion basica para Persona Juridica;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Juridica autenticado con acceso al formulario y listas parametrizadas disponibles.;El sistema permite diligenciar campos editables obligatorios de Persona Juridica y habilita Continuar con informacion valida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Juridica;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Juridica;Se visualizan los campos de Persona Juridica;;;;;;;;;;;
+;;;8;Seleccionar valores validos en tipo de sociedad y sector de la empresa;Los campos quedan diligenciados correctamente;;;;;;;;;;;
+;;;9;Validar el estado del boton Continuar;El boton Continuar queda habilitado cuando los campos obligatorios editables tienen informacion valida;;;;;;;;;;;
+;Test Case;Validar direccion y contacto editables para Persona Natural;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Natural autenticado con acceso a la seccion direccion y contacto.;El sistema permite editar direccion y contacto de Persona Natural con reglas de negocio aplicadas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Natural;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Natural y ubicar la seccion Direccion y contacto;Se visualizan los campos de direccion y contacto;;;;;;;;;;;
+;;;8;Seleccionar un departamento de residencia valido;El municipio de residencia se habilita;;;;;;;;;;;
+;;;9;Seleccionar un municipio de residencia asociado y un barrio desde la busqueda predictiva;Los campos quedan diligenciados correctamente;;;;;;;;;;;
+;;;10;Ingresar una direccion valida, seleccionar sector solicitante y tipo de predio;Los datos quedan diligenciados correctamente;;;;;;;;;;;
+;;;11;Validar celular y correo electronico precargados;Los campos obligatorios no editables se muestran con informacion actual;;;;;;;;;;;
+;;;12;Seleccionar al menos dos opciones en Medio de contacto;La multiseleccion queda registrada correctamente;;;;;;;;;;;
+;Test Case;Validar direccion y contacto para Persona Juridica con campos no editables y minimo de medios de contacto;;;;Por Analizar;Integracion;Positiva;Usuario tipo Persona Juridica autenticado con acceso a la seccion direccion y contacto.;El sistema respeta campos no editables, permite diligenciar campos editables y exige minimo dos opciones en Medio de contacto.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Juridica;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Seleccionar Persona Juridica y ubicar la seccion Direccion y contacto;Se visualizan los campos de direccion y contacto para Persona Juridica;;;;;;;;;;;
+;;;8;Validar que departamento de residencia, municipio de residencia, direccion, celular y correo electronico definidos como no editables no permiten modificacion;Los campos no editables no permiten cambios;;;;;;;;;;;
+;;;9;Ingresar un telefono fijo valido y seleccionar tipo de predio;Los campos editables quedan diligenciados correctamente;;;;;;;;;;;
+;;;10;Seleccionar al menos dos opciones en Medio de contacto;La multiseleccion queda registrada correctamente;;;;;;;;;;;
+;Test Case;Validar obligatoriedad de terminos, tratamiento y autorizacion de canales en primer inicio;;;;Por Analizar;Integracion;Negativa;Usuario en primer inicio de sesion ubicado en la pantalla de autorizaciones obligatorias.;El sistema impide continuar cuando no se aceptan todas las autorizaciones obligatorias y muestra las validaciones correspondientes.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido marcado como primer inicio;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;El sistema redirige a Actualizar datos y muestra las autorizaciones obligatorias;;;;;;;;;;;
+;;;6;Dejar sin seleccionar terminos y condiciones, tratamiento de datos personales o autorizacion de canales de contacto;Las opciones obligatorias permanecen sin aceptar;;;;;;;;;;;
+;;;7;Seleccionar el boton Continuar;El sistema impide avanzar y muestra la validacion de obligatoriedad correspondiente;;;;;;;;;;;
+;Test Case;Validar hipervinculo de autorizacion de canales con PDF embebido;;;;Por Analizar;Integracion;Positiva;Usuario en primer inicio de sesion ubicado en la pantalla de autorizaciones obligatorias y con acceso al hipervinculo asociado.;El hipervinculo de autorizacion de canales muestra el PDF embebido definido en la HU.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido marcado como primer inicio;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;El sistema redirige a Actualizar datos y muestra las autorizaciones obligatorias;;;;;;;;;;;
+;;;6;Seleccionar el hipervinculo de autorizacion de canales de contacto;Se visualiza el PDF embebido correspondiente sin salir del flujo esperado;;;;;;;;;;;
+;Test Case;Validar campos obligatorios vacios y mensaje informativo del formulario;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en el formulario Actualizar datos con acceso al boton Guardar cambios.;El sistema resalta los campos obligatorios vacios e informa que existen datos pendientes por corregir.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Eliminar o dejar vacios campos obligatorios editables del formulario;Los campos obligatorios quedan sin diligenciar;;;;;;;;;;;
+;;;8;Seleccionar Guardar cambios;Los campos pendientes se resaltan y se muestra un mensaje informativo indicando que existen datos pendientes por corregir;;;;;;;;;;;
+;Test Case;Validar tipo de dato, formato y longitud maxima de campos editables;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en el formulario Actualizar datos con acceso a campos editables de informacion basica y contacto.;El sistema rechaza valores con tipo de dato, formato o longitud no permitida segun la regla de cada campo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido de Persona Natural;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Ingresar un correo electronico con estructura invalida, un telefono fijo con caracteres no numericos o una direccion que exceda la longitud maxima permitida;Los valores invalidos quedan digitados en los campos editables;;;;;;;;;;;
+;;;8;Seleccionar Guardar cambios;El sistema valida el tipo de dato, el formato y la longitud maxima permitida y bloquea el guardado de informacion invalida;;;;;;;;;;;
+;Test Case;Validar guardado exitoso con mensaje Accion realizada con exito;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con informacion valida diligenciada en el formulario Actualizar datos.;El sistema guarda los cambios correctamente y muestra el mensaje Accion realizada con exito.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Diligenciar todos los campos editables obligatorios con informacion valida y aceptar las autorizaciones obligatorias cuando aplique;El formulario queda listo para guardarse;;;;;;;;;;;
+;;;8;Seleccionar Guardar cambios;Se muestra el mensaje Accion realizada con exito;;;;;;;;;;;
+;Test Case;Validar mensaje de error tecnico al fallar el guardado;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con informacion valida diligenciada y con una condicion controlada de error tecnico en el servicio de guardado.;El sistema informa el error tecnico y no confirma el guardado.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Diligenciar todos los campos editables obligatorios con informacion valida;El formulario queda listo para guardarse;;;;;;;;;;;
+;;;8;Provocar una falla tecnica controlada al ejecutar Guardar cambios;El sistema muestra el mensaje Ocurrio un error tecnico. Por favor, intentalo nuevamente mas tarde;;;;;;;;;;;
+;Test Case;Validar auditoria ESD-187 al actualizar datos del usuario;;;;Por Analizar;Integracion;Positiva;Usuario autenticado que ejecuto exitosamente la actualizacion de datos y con acceso a Application Insights para validar auditoria.;Se registra el evento de auditoria con la informacion minima requerida por ESD-187.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Actualizar datos validos y guardar los cambios;La actualizacion finaliza exitosamente;;;;;;;;;;;
+;;;8;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;9;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;10;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;11;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;12;En la tabla de traces buscar el log de auditoria generado por la actualizacion de datos y validar fecha de registro, canal, dispositivo, ip publica, usuario, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log registra la informacion correspondiente al evento generado;;;;;;;;;;;
+;Test Case;Validar flujo web en responsive para Actualizar datos;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad Actualizar datos desde navegador web.;La aplicacion web mantiene usabilidad y correcta distribucion visual en resoluciones responsive soportadas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza el formulario Actualizar datos;;;;;;;;;;;
+;;;7;Cambiar la resolucion del navegador a quiebres responsive soportados;La interfaz redistribuye correctamente campos, botones y textos sin solapamientos ni cortes;;;;;;;;;;;
+;;;8;Ejecutar una accion basica del formulario en cada resolucion validada;La funcionalidad permanece operativa en todas las resoluciones evaluadas;;;;;;;;;;;
+;Test Case;Validar diseno web segun figma en la pantalla Actualizar datos;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla Actualizar datos y diseno figma web aprobado disponible para comparacion.;La version web cumple iconos, colores, tipografia, alineacion y ubicacion de elementos segun figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Activar captcha;El captcha queda validado;;;;;;;;;;;
+;;;5;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual;;;;;;;;;;;
+;;;6;Navegar por Menu, Mi perfil, Actualizar datos;Se visualiza la pantalla Actualizar datos;;;;;;;;;;;
+;;;7;Comparar la pantalla y sus estados visibles con el figma web aprobado;Los iconos, colores, tipografia, alineacion, espaciados y ubicacion de elementos coinciden con el diseno aprobado;;;;;;;;;;;
+;Test Case;Validar diseno movil segun figma en la pantalla Actualizar datos;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla Actualizar datos en dispositivo movil o vista movil y diseno figma movil aprobado disponible para comparacion.;La version movil cumple iconos, colores, tipografia, alineacion y ubicacion de elementos segun figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo movil o vista movil de ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El usuario queda digitado;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;La contrasena queda digitada;;;;;;;;;;;
+;;;4;Seleccionar el boton Ingresar;Se visualiza el home de la Oficina Virtual en movil;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Actualizar datos del usuario;Se visualiza la pantalla Actualizar datos en movil;;;;;;;;;;;
+;;;6;Comparar la pantalla y sus estados visibles con el figma movil aprobado;Los iconos, colores, tipografia, alineacion, espaciados y ubicacion de elementos coinciden con el diseno aprobado para movil;;;;;;;;;;;

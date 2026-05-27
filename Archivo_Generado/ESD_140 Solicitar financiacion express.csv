@@ -1,0 +1,348 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;WEB - Validar visualizacion de Financiacion express cuando el usuario cumple condicion financiera y existen opciones validas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con sesion activa valida, con al menos una factura vencida o deuda vigente vencida. Servicios Creditos/Opciones disponible.;El home muestra la accion Financiacion express solo para usuarios elegibles con opciones validas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario con deuda vencida;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Esperar la evaluacion de condicion financiera del usuario;El sistema valida que existe al menos una factura vencida o deuda vigente con fecha limite de pago superada;;;;;;;;;;;
+;;;4;Permitir la consulta del servicio Creditos Opciones para el usuario elegible;El servicio retorna opciones validas con atributo lisCuotas;;;;;;;;;;;
+;;;5;Visualizar las acciones disponibles en el home;Se muestra el elemento de accion Financiacion express;;;;;;;;;;;
+;Test Case;WEB - Validar ocultamiento de Financiacion express cuando el usuario no cumple condicion financiera;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con sesion activa valida sin facturas vencidas ni deuda vigente vencida.;El home no muestra la accion Financiacion express para usuarios no elegibles.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario sin deuda vencida;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Esperar la evaluacion de condicion financiera del usuario;El sistema valida que no existen facturas vencidas ni deuda vigente vencida con fecha limite superada;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en el home;No se muestra el elemento de accion Financiacion express;;;;;;;;;;;
+;Test Case;WEB - Validar ocultamiento de Financiacion express cuando Creditos Opciones no retorna lisCuotas;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con sesion activa valida y con deuda vencida. Servicio Creditos/Opciones disponible pero sin opciones validas.;El home no muestra la accion Financiacion express cuando no existen opciones validas del servicio.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario con deuda vencida;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Esperar la evaluacion de condicion financiera del usuario;El sistema valida que existe al menos una factura vencida o deuda vigente vencida;;;;;;;;;;;
+;;;4;Permitir la consulta del servicio Creditos Opciones;El servicio responde sin atributo lisCuotas;;;;;;;;;;;
+;;;5;Visualizar las acciones disponibles en el home;No se muestra el elemento de accion Financiacion express;;;;;;;;;;;
+;Test Case;WEB - Validar redireccion al flujo de dos pasos desde Financiacion express;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con sesion activa valida, elegible para financiacion express y con accion visible en el home.;La seleccion de Financiacion express redirige al flujo de dos pasos definido.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario elegible;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Seleccionar la accion Financiacion express;El sistema redirige a la nueva pantalla del proceso;;;;;;;;;;;
+;;;4;Visualizar la estructura del flujo;Se muestran de forma secuencial Paso 1 Informacion del solicitante y Paso 2 Seleccion de financiacion y firma;;;;;;;;;;;
+;Test Case;WEB - Validar visualizacion de datos del solicitante ofuscados y en solo lectura en Paso 1;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en el flujo de Financiacion express. Perfil del usuario con datos requeridos completos.;Paso 1 muestra datos del solicitante ofuscados y no editables.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario elegible;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Seleccionar la accion Financiacion express;El sistema redirige al Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;4;Visualizar los datos mostrados del solicitante;Se muestran nombres y apellidos, tipo de persona, numero de documento, lugar de expedicion, telefono, calidad de cliente, direccion, departamento y municipio en modo solo lectura y ofuscados;;;;;;;;;;;
+;;;5;Intentar editar cualquiera de los campos mostrados;El sistema no permite modificar ninguno de los datos visibles;;;;;;;;;;;
+;Test Case;WEB - Validar mensaje informativo y redireccion a actualizacion de perfil desde Paso 1;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en el flujo de Financiacion express desde el home.;Paso 1 informa como actualizar datos desactualizados y redirige al perfil.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario elegible;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Seleccionar la accion Financiacion express;El sistema redirige al Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;4;Ubicar el mensaje informativo de datos del perfil;Se muestra el mensaje que indica que si algun dato esta desactualizado puede actualizarlo desde su perfil;;;;;;;;;;;
+;;;5;Seleccionar el enlace o boton para actualizar datos;El sistema redirige directamente a la funcionalidad de actualizacion de datos del perfil;;;;;;;;;;;
+;Test Case;WEB - Validar obligatoriedad y restriccion de fecha de expedicion anterior a hoy;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 de Financiacion express.;La fecha de expedicion es obligatoria y solo permite fechas anteriores a la actual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Ubicar el selector de fecha de expedicion del documento;Se muestra el campo de fecha como obligatorio;;;;;;;;;;;
+;;;4;Abrir el selector e intentar elegir la fecha actual;La fecha actual aparece deshabilitada y no puede seleccionarse;;;;;;;;;;;
+;;;5;Intentar elegir una fecha futura;Las fechas futuras aparecen deshabilitadas y no pueden seleccionarse;;;;;;;;;;;
+;;;6;Dejar el campo sin diligenciar e intentar continuar;El sistema no permite avanzar al Paso 2;;;;;;;;;;;
+;;;7;Seleccionar una fecha anterior a hoy;El campo acepta la fecha seleccionada como valida;;;;;;;;;;;
+;Test Case;WEB - Validar adjuncion obligatoria de tres fotografias en formatos permitidos JPG o PNG;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 de Financiacion express.;Paso 1 permite adjuntar las tres fotografias obligatorias en formatos validos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Seleccionar una fecha de expedicion valida anterior a hoy;La fecha queda registrada en pantalla;;;;;;;;;;;
+;;;4;Adjuntar la fotografia del frente del documento en formato JPG o PNG;El sistema acepta el archivo y muestra su previsualizacion;;;;;;;;;;;
+;;;5;Adjuntar la fotografia del reverso del documento en formato JPG o PNG;El sistema acepta el archivo y muestra su previsualizacion;;;;;;;;;;;
+;;;6;Adjuntar la fotografia selfie con documento visible en formato JPG o PNG;El sistema acepta el archivo y muestra su previsualizacion;;;;;;;;;;;
+;;;7;Confirmar las tres imagenes adjuntas;Las tres fotografias quedan listas para continuar;;;;;;;;;;;
+;Test Case;WEB - Validar rechazo de archivo adjunto con formato diferente a JPG o PNG;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 de Financiacion express.;El sistema rechaza archivos con formatos no permitidos para fotografias en web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Seleccionar una fecha de expedicion valida anterior a hoy;La fecha queda registrada en pantalla;;;;;;;;;;;
+;;;4;Intentar adjuntar la fotografia del frente del documento con un archivo PDF;El sistema rechaza el archivo y no permite su seleccion;;;;;;;;;;;
+;;;5;Intentar adjuntar la fotografia del reverso del documento con un archivo GIF;El sistema rechaza el archivo y no permite su seleccion;;;;;;;;;;;
+;;;6;Intentar adjuntar la fotografia selfie con documento visible con un archivo BMP;El sistema rechaza el archivo y no permite su seleccion;;;;;;;;;;;
+;Test Case;WEB - Validar previsualizacion y reemplazo de cada fotografia adjunta antes de continuar;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 de Financiacion express.;Cada fotografia puede previsualizarse y reemplazarse antes de avanzar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Adjuntar una fotografia valida del frente del documento;El sistema muestra la previsualizacion de la imagen;;;;;;;;;;;
+;;;4;Seleccionar la opcion para reemplazar o retomar la fotografia del frente;El sistema permite cargar una nueva imagen para sustituir la anterior;;;;;;;;;;;
+;;;5;Confirmar la nueva fotografia del frente;La imagen previa se reemplaza por la nueva imagen confirmada;;;;;;;;;;;
+;;;6;Repetir la validacion para reverso y selfie;Cada imagen puede previsualizarse y reemplazarse antes de continuar;;;;;;;;;;;
+;Test Case;WEB - Validar confirmacion al eliminar una fotografia adjunta;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 con al menos una fotografia adjunta y visible.;La eliminacion de una fotografia requiere confirmacion explicita.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Adjuntar una fotografia valida y visualizar su previsualizacion;La imagen se muestra asociada al campo correspondiente;;;;;;;;;;;
+;;;4;Seleccionar la opcion de eliminar la fotografia;El sistema muestra el mensaje de confirmacion Esta seguro que desea eliminar la imagen?;;;;;;;;;;;
+;;;5;Confirmar la eliminacion;El sistema elimina la fotografia seleccionada;;;;;;;;;;;
+;Test Case;WEB - Validar bloqueo de avance al Paso 2 cuando faltan fecha o fotografias obligatorias;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 de Financiacion express.;El sistema no permite avanzar sin fecha valida y tres fotografias confirmadas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Diligenciar solo la fecha de expedicion valida sin adjuntar fotografias;El formulario permanece incompleto;;;;;;;;;;;
+;;;4;Seleccionar la opcion para continuar al Paso 2;El sistema no permite avanzar;;;;;;;;;;;
+;;;5;Adjuntar solo una o dos fotografias sin completar las tres obligatorias;El formulario permanece incompleto;;;;;;;;;;;
+;;;6;Seleccionar la opcion para continuar al Paso 2;El sistema no permite avanzar;;;;;;;;;;;
+;Test Case;WEB - Validar avance al Paso 2 cuando fecha y tres fotografias obligatorias estan completas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 con fecha valida y tres fotografias confirmadas.;El sistema permite avanzar al Paso 2 cuando todos los requisitos del Paso 1 se cumplen.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;El sistema muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Seleccionar una fecha de expedicion valida anterior a hoy;La fecha queda registrada en pantalla;;;;;;;;;;;
+;;;4;Adjuntar y confirmar las tres fotografias obligatorias en formato valido;Las tres imagenes quedan completas y visibles;;;;;;;;;;;
+;;;5;Seleccionar la opcion para continuar;El sistema avanza al Paso 2 Seleccion de financiacion y firma;;;;;;;;;;;
+;Test Case;WEB - Validar consulta y visualizacion de total deuda y valor maximo a financiar con formato monetario;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 de Financiacion express. Servicio Creditos/Opciones disponible.;Paso 2 muestra saldo total y saldo a financiar en formato monetario estandar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Esperar la consulta del servicio Creditos Opciones al cargar el Paso 2;El sistema obtiene la informacion financiera requerida;;;;;;;;;;;
+;;;4;Visualizar el total de la deuda actual;Se muestra el valor decSaldoTotal en moneda local;;;;;;;;;;;
+;;;5;Visualizar el valor maximo a financiar;Se muestra el valor decSaldoFinanciar en moneda local;;;;;;;;;;;
+;;;6;Revisar el formato de ambos valores monetarios;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;Test Case;WEB - Validar visualizacion de opciones de financiacion y sus datos monetarios;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 con respuesta valida de Creditos/Opciones.;El sistema lista opciones de financiacion con datos completos y formato correcto.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Visualizar el listado de opciones de financiacion retornadas por el servicio;El sistema muestra una opcion por cada registro disponible;;;;;;;;;;;
+;;;4;Revisar una opcion del listado;Se muestran numero de cuotas, valor de la cuota, tasa de interes aplicable y cuota inicial;;;;;;;;;;;
+;;;5;Revisar el formato de cuota periodica y cuota inicial;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;;;6;Revisar el formato del total deuda y valor maximo a financiar dentro del contexto del Paso 2;Los importes mantienen formato monetario consistente en toda la pantalla;;;;;;;;;;;
+;Test Case;WEB - Validar seleccion unica de opcion de financiacion y bloqueo al continuar sin seleccion;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 con opciones de financiacion visibles.;El proceso solo permite una opcion seleccionada y no permite continuar sin seleccion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Visualizar las opciones de financiacion sin seleccionar ninguna;Ninguna opcion queda marcada;;;;;;;;;;;
+;;;4;Intentar continuar con el proceso;El sistema no permite avanzar;;;;;;;;;;;
+;;;5;Seleccionar una opcion de financiacion valida;Solo la opcion elegida queda seleccionada;;;;;;;;;;;
+;;;6;Intentar seleccionar una segunda opcion diferente;El sistema reemplaza la seleccion anterior o mantiene una unica seleccion activa y no permite seleccion multiple;;;;;;;;;;;
+;Test Case;WEB - Validar visualizacion de lienzo de firma digital tras seleccionar una opcion de financiacion;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 con una opcion de financiacion seleccionada.;El sistema muestra el lienzo de firma digital segun HU ESD-141.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Continuar con el proceso;El sistema muestra el recuadro con el lienzo de firma digital;;;;;;;;;;;
+;Test Case;WEB - Validar obligatoriedad de firma con contenido antes de mostrar aviso de privacidad;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 con una opcion de financiacion seleccionada.;El aviso de privacidad solo aparece cuando existe firma valida con trazo.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Visualizar el lienzo de firma sin realizar trazos;El lienzo permanece vacio;;;;;;;;;;;
+;;;5;Intentar continuar con el proceso;El sistema no considera valida la firma y no muestra el check de aviso de privacidad;;;;;;;;;;;
+;;;6;Realizar al menos un trazo dentro del lienzo;El sistema reconoce una firma con contenido valido;;;;;;;;;;;
+;;;7;Visualizar la seccion posterior a la firma;Se muestra el check del aviso de privacidad despues de validar la firma;;;;;;;;;;;
+;Test Case;WEB - Validar apertura embebida del aviso de privacidad y habilitacion del boton Enviar solo con check marcado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 con opcion de financiacion seleccionada y firma valida diligenciada.;El aviso de privacidad se abre embebido y el boton Enviar se habilita solo al marcar el check.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;El sistema permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion y diligenciar una firma valida;El sistema muestra el check del aviso de privacidad;;;;;;;;;;;
+;;;4;Seleccionar el texto subrayado del aviso de privacidad;El sistema abre embebida la URL configurada del aviso de privacidad;;;;;;;;;;;
+;;;5;Verificar el estado inicial del boton Enviar sin marcar el check;El boton Enviar permanece deshabilitado;;;;;;;;;;;
+;;;6;Marcar el check del aviso de privacidad;El boton Enviar se habilita;;;;;;;;;;;
+;Test Case;WEB - Validar creacion exitosa de financiacion, generacion de volante y descarga con nombre esperado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 con opcion seleccionada, firma valida y check de privacidad marcado. Servicio Creditos/Crear disponible.;La solicitud se crea exitosamente y el volante se genera para descarga con el nombre definido.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas, completar el Paso 1 y acceder al Paso 2;El sistema permite continuar con la solicitud;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Diligenciar una firma valida y marcar el check del aviso de privacidad;El boton Enviar queda habilitado;;;;;;;;;;;
+;;;5;Seleccionar el boton Enviar;El sistema invoca el servicio Creditos Crear;;;;;;;;;;;
+;;;6;Recibir respuesta exitosa del servicio Creditos Crear;El sistema genera el volante de confirmacion de la financiacion;;;;;;;;;;;
+;;;7;Seleccionar la opcion de descarga del volante;El archivo descargado sigue el formato financiacion_express_DD/MM/AAAA_YYYY con la fecha de generacion y el numero de cuenta asociado;;;;;;;;;;;
+;Test Case;WEB - Validar contenido completo del volante de confirmacion generado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con financiacion creada exitosamente y volante disponible para visualizacion o descarga.;El volante contiene toda la informacion requerida por la HU.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar una financiacion express exitosa;El sistema genera el volante de confirmacion;;;;;;;;;;;
+;;;3;Abrir el volante generado;Se visualiza el documento de confirmacion;;;;;;;;;;;
+;;;4;Revisar el encabezado y titulo del volante;El documento contiene header y el titulo Financiacion express;;;;;;;;;;;
+;;;5;Revisar la informacion general del documento;El documento contiene numero de orden, cliente y direccion;;;;;;;;;;;
+;;;6;Revisar la seccion Datos del solicitante;El documento contiene tipo de documento, numero documento, fecha expedicion, lugar expedicion, en calidad y nombre completo;;;;;;;;;;;
+;;;7;Revisar la seccion Financiacion Express;El documento contiene cedula, saldo total, saldo a financiar, numero de cuotas, interes, cuota periodica, numero proceso y mensaje personalizado;;;;;;;;;;;
+;;;8;Revisar la seccion Cliente Digital;El documento contiene el telefono del deudor;;;;;;;;;;;
+;;;9;Revisar la seccion de autorizacion para tratamiento de datos;El documento contiene el texto legal completo indicado por la HU;;;;;;;;;;;
+;;;10;Revisar la firma y datos asociados;El documento contiene la firma del cliente junto con su nombre e identificacion;;;;;;;;;;;
+;;;11;Revisar la fecha y hora de impresion;El documento muestra la fecha y hora de impresion;;;;;;;;;;;
+;;;12;Revisar los valores monetarios visibles del volante;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;Test Case;WEB - Validar adjuncion exitosa de volante y fotografias al proceso y mensaje final de confirmacion;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con respuesta exitosa de Creditos/Crear. Servicio AnexarArchivo disponible.;El sistema adjunta volante y fotografias y muestra mensaje final con numero de proceso.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente la financiacion express;El sistema genera el volante de confirmacion;;;;;;;;;;;
+;;;3;Esperar el envio de volante y fotografias al servicio Controlador procesos AnexarArchivo;El sistema adjunta correctamente los archivos requeridos al proceso;;;;;;;;;;;
+;;;4;Visualizar la respuesta final del flujo;Se muestran los mensajes Tu financiacion ha sido creada y Numero de proceso XXXXXXX con el valor IngNumeroProceso retornado;;;;;;;;;;;
+;;;5;Seleccionar la opcion Volver al inicio;El sistema redirige al home del sistema;;;;;;;;;;;
+;Test Case;WEB - Validar mensaje de error y reintento ilimitado cuando falla Creditos Crear;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 con datos validos para envio. Servicio Creditos/Crear con respuesta de error.;El sistema informa el error de financiacion y permite reintentar sin limite.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas, completar Paso 1 y llegar al Paso 2 con datos validos;El sistema deja disponible el boton Enviar;;;;;;;;;;;
+;;;3;Seleccionar el boton Enviar;El sistema invoca el servicio Creditos Crear;;;;;;;;;;;
+;;;4;Recibir respuesta de error del servicio Creditos Crear;El sistema muestra el mensaje No fue posible completar la financiacion, por favor intenta nuevamente mas tarde;;;;;;;;;;;
+;;;5;Seleccionar la opcion de reintento disponible para repetir la operacion;El sistema permite reintentar la operacion sin limite establecido;;;;;;;;;;;
+;Test Case;WEB - Validar mensaje de error cuando no se crea la solicitud durante el procesamiento;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en el envio de financiacion express. El proceso de radicado falla sin crear la solicitud.;El sistema muestra mensaje de error de procesamiento y ofrece reintentar o volver al inicio.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar el flujo hasta el envio;El sistema invoca el procesamiento de la solicitud;;;;;;;;;;;
+;;;3;Recibir la condicion de fallo en la cual no se crea la solicitud de financiacion;El sistema muestra el mensaje No fue posible completar tu solicitud. Ocurrio un error durante el procesamiento. Verifica tu conexion o intentalo mas tarde.;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en la pantalla de error;Se muestran las opciones Reintentar y Volver al inicio;;;;;;;;;;;
+;;;5;Seleccionar Reintentar;El sistema vuelve a intentar la conexion con el servicio;;;;;;;;;;;
+;;;6;Seleccionar Volver al inicio;El sistema redirige al home del sistema;;;;;;;;;;;
+;Test Case;WEB - Validar mensaje de error cuando la solicitud se crea pero falla la adjuncion de archivos;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con solicitud creada exitosamente pero con fallo en AnexarArchivo.;El sistema muestra mensaje de error por adjuntos fallidos y ofrece reintentar o volver al inicio.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar el flujo hasta el envio;El sistema crea la solicitud de financiacion;;;;;;;;;;;
+;;;3;Recibir fallo del servicio Controlador procesos AnexarArchivo al intentar adjuntar volante y fotografias;El sistema muestra el mensaje Ocurrio un error durante el procesamiento. Verifica tu conexion a internet o intenta nuevamente mas tarde. Tambien puedes contactarnos a traves de la linea 01 8000 971 903, donde con gusto te brindaremos asistencia.;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en la pantalla de error;Se muestran las opciones Reintentar y Volver al inicio;;;;;;;;;;;
+;;;5;Seleccionar Reintentar;El sistema vuelve a intentar la conexion con el servicio;;;;;;;;;;;
+;;;6;Seleccionar Volver al inicio;El sistema redirige al home del sistema;;;;;;;;;;;
+;Test Case;WEB - Validar auditoria de las acciones de Financiacion express segun HU ESD-187;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a Financiacion express. Auditoria habilitada segun dependencia HU ESD-187.;Todas las acciones del usuario en la pantalla quedan registradas en auditoria.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria asociado a las acciones de Financiacion express y validar fecha de registro, canal, dispositivo, ip publica, usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log registra la informacion correspondiente a las acciones ejecutadas por el usuario;;;;;;;;;;;
+;Test Case;WEB - Validar responsive del flujo de Financiacion express en aplicacion web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso al flujo web de Financiacion express.;El flujo web mantiene usabilidad y visibilidad correcta en vista responsive.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y acceder a Financiacion express;El sistema muestra el flujo en la aplicacion web;;;;;;;;;;;
+;;;3;Cambiar el tamano de visualizacion del navegador a una resolucion responsive movil;Los contenedores y elementos del flujo se reajustan sin traslapes ni cortes;;;;;;;;;;;
+;;;4;Navegar por Paso 1 y Paso 2 en vista responsive;Los campos, botones, imagenes y textos se mantienen visibles, legibles y operables;;;;;;;;;;;
+;Test Case;WEB - Validar diseno segun figma para home y flujo de Financiacion express en web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a home y flujo web de Financiacion express. Diseno figma disponible como referencia del producto.;Las pantallas web del alcance mantienen consistencia visual con el diseno aprobado.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y visualizar el home Gestion de facturacion;El home carga con los elementos del alcance visibles;;;;;;;;;;;
+;;;3;Validar el elemento Financiacion express y su ubicacion visual en el home contra el diseno figma;Iconos, colores, tipografia, alineacion y ubicacion coinciden con la referencia aprobada;;;;;;;;;;;
+;;;4;Seleccionar Financiacion express y visualizar Paso 1 y Paso 2;Las pantallas del flujo cargan correctamente;;;;;;;;;;;
+;;;5;Validar visualmente Paso 1 y Paso 2 contra el diseno figma;Iconos, colores, tipografia, alineacion, textos y consistencia visual coinciden con la referencia aprobada;;;;;;;;;;;
+;Test Case;MOBILE - Validar visualizacion de Financiacion express cuando el usuario cumple condicion financiera y existen opciones validas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con sesion activa valida en app movil, con al menos una factura vencida o deuda vigente vencida. Servicios disponibles.;El home movil muestra la accion Financiacion express para usuarios elegibles con opciones validas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario con deuda vencida;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Esperar la evaluacion de condicion financiera del usuario;El sistema valida elegibilidad y consulta Creditos Opciones;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en el home movil;Se muestra el elemento de accion Financiacion express;;;;;;;;;;;
+;Test Case;MOBILE - Validar ocultamiento de Financiacion express cuando no existe condicion financiera u opciones validas;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en app movil sin deuda vencida o con servicio Creditos/Opciones sin lisCuotas.;El home movil no muestra la accion Financiacion express cuando no aplica.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas en el escenario no elegible;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Esperar la evaluacion de condicion financiera del usuario;El sistema determina que no aplica mostrar la funcionalidad;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en el home movil;No se muestra el elemento de accion Financiacion express;;;;;;;;;;;
+;Test Case;MOBILE - Validar redireccion al flujo de dos pasos desde Financiacion express;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en app movil con accion Financiacion express visible.;La app movil redirige al flujo de dos pasos al seleccionar la funcionalidad.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas de un usuario elegible;El sistema inicia sesion y muestra el home Gestion de facturacion;;;;;;;;;;;
+;;;3;Seleccionar la accion Financiacion express;La app redirige a la pantalla del proceso;;;;;;;;;;;
+;;;4;Visualizar la estructura del flujo;Se muestran Paso 1 Informacion del solicitante y Paso 2 Seleccion de financiacion y firma;;;;;;;;;;;
+;Test Case;MOBILE - Validar visualizacion de datos del solicitante ofuscados y en solo lectura en Paso 1;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en app movil dentro del flujo de Financiacion express.;Paso 1 movil muestra datos ofuscados y no editables.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Visualizar los datos mostrados del solicitante;Se muestran nombres y apellidos, tipo de persona, numero de documento, lugar de expedicion, telefono, calidad de cliente, direccion, departamento y municipio en modo solo lectura y ofuscados;;;;;;;;;;;
+;;;4;Intentar editar cualquiera de los campos mostrados;La app no permite modificar ninguno de los datos visibles;;;;;;;;;;;
+;Test Case;MOBILE - Validar mensaje informativo y redireccion a actualizacion de perfil desde Paso 1;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en app movil dentro del flujo de Financiacion express.;Paso 1 movil informa como actualizar datos desactualizados y redirige al perfil.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Ubicar el mensaje informativo de datos del perfil;Se muestra el mensaje que indica que si algun dato esta desactualizado puede actualizarlo desde su perfil;;;;;;;;;;;
+;;;4;Seleccionar el enlace o boton para actualizar datos;La app redirige directamente a la funcionalidad de actualizacion de datos del perfil;;;;;;;;;;;
+;Test Case;MOBILE - Validar obligatoriedad y restriccion de fecha de expedicion anterior a hoy;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 movil de Financiacion express.;La fecha de expedicion en mobile es obligatoria y solo permite fechas anteriores a la actual.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Abrir el selector de fecha de expedicion;Se muestra el campo como obligatorio;;;;;;;;;;;
+;;;4;Intentar elegir la fecha actual o una fecha futura;La app muestra dichas fechas deshabilitadas y no permite seleccionarlas;;;;;;;;;;;
+;;;5;Intentar continuar sin fecha diligenciada;La app no permite avanzar al Paso 2;;;;;;;;;;;
+;;;6;Seleccionar una fecha anterior a hoy;La app acepta la fecha como valida;;;;;;;;;;;
+;Test Case;MOBILE - Validar pantalla guia previa a cada captura y uso exclusivo de camara nativa;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 movil. Dispositivo con camara funcional.;La app muestra guia previa y permite capturar cada fotografia solo con camara nativa.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Seleccionar la accion para capturar la fotografia del frente del documento;La app muestra una pantalla estatica de guia con descripcion clara y recomendaciones;;;;;;;;;;;
+;;;4;Seleccionar la opcion para continuar desde la guia;La app abre exclusivamente la camara nativa del dispositivo para la captura;;;;;;;;;;;
+;;;5;Capturar la fotografia del frente;La imagen queda registrada para previsualizacion;;;;;;;;;;;
+;;;6;Repetir el flujo para reverso del documento y selfie con documento visible;Cada fotografia muestra guia previa y usa exclusivamente la camara nativa;;;;;;;;;;;
+;Test Case;MOBILE - Validar previsualizacion y retoma de fotografias capturadas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 movil con acceso a camara nativa.;Cada fotografia capturada en mobile puede previsualizarse y retomar antes de confirmar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Capturar la fotografia del frente del documento desde la camara nativa;La app muestra la previsualizacion de la imagen capturada;;;;;;;;;;;
+;;;4;Seleccionar la opcion para retomar la fotografia;La app permite volver a capturar la imagen;;;;;;;;;;;
+;;;5;Confirmar la nueva fotografia capturada;La imagen anterior se reemplaza por la nueva confirmada;;;;;;;;;;;
+;;;6;Repetir la validacion para reverso y selfie;Cada imagen puede previsualizarse y retomarse antes de continuar;;;;;;;;;;;
+;Test Case;MOBILE - Validar confirmacion al eliminar una fotografia capturada;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 movil con al menos una fotografia capturada.;La eliminacion de una fotografia en mobile requiere confirmacion explicita.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Capturar y visualizar una fotografia;La imagen se muestra asociada al campo correspondiente;;;;;;;;;;;
+;;;4;Seleccionar la opcion de eliminar la fotografia;La app muestra el mensaje de confirmacion Esta seguro que desea eliminar la imagen?;;;;;;;;;;;
+;;;5;Confirmar la eliminacion;La app elimina la fotografia seleccionada;;;;;;;;;;;
+;Test Case;MOBILE - Validar bloqueo de avance al Paso 2 cuando faltan fecha o tres fotografias obligatorias;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 1 movil de Financiacion express.;La app no permite avanzar sin fecha valida y tres fotografias confirmadas.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Diligenciar solo la fecha de expedicion valida sin completar las tres fotografias;El formulario permanece incompleto;;;;;;;;;;;
+;;;4;Seleccionar la opcion para continuar;La app no permite avanzar al Paso 2;;;;;;;;;;;
+;;;5;Completar una o dos fotografias sin llegar a tres confirmadas;El formulario permanece incompleto;;;;;;;;;;;
+;;;6;Seleccionar la opcion para continuar;La app no permite avanzar al Paso 2;;;;;;;;;;;
+;Test Case;MOBILE - Validar avance al Paso 2 cuando fecha y tres fotografias obligatorias estan completas;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 1 movil con fecha valida y tres fotografias confirmadas.;La app permite avanzar al Paso 2 cuando todos los requisitos del Paso 1 se cumplen.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas e ingresar a Financiacion express;La app muestra el Paso 1 Informacion del solicitante;;;;;;;;;;;
+;;;3;Seleccionar una fecha de expedicion valida anterior a hoy;La fecha queda registrada en pantalla;;;;;;;;;;;
+;;;4;Capturar y confirmar las tres fotografias obligatorias;Las tres imagenes quedan completas y visibles;;;;;;;;;;;
+;;;5;Seleccionar la opcion para continuar;La app avanza al Paso 2 Seleccion de financiacion y firma;;;;;;;;;;;
+;Test Case;MOBILE - Validar consulta y visualizacion de total deuda y valor maximo a financiar con formato monetario;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 movil. Servicio Creditos/Opciones disponible.;La app muestra saldo total y saldo a financiar con formato monetario estandar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Esperar la consulta del servicio Creditos Opciones al cargar el Paso 2;La app obtiene la informacion financiera requerida;;;;;;;;;;;
+;;;4;Visualizar el total de la deuda actual y el valor maximo a financiar;La app muestra decSaldoTotal y decSaldoFinanciar en moneda local;;;;;;;;;;;
+;;;5;Revisar el formato de ambos valores monetarios;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;Test Case;MOBILE - Validar visualizacion de opciones de financiacion y sus datos monetarios;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 movil con respuesta valida de Creditos/Opciones.;La app lista opciones de financiacion con datos completos y formato correcto.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Visualizar el listado de opciones de financiacion retornadas por el servicio;La app muestra una opcion por cada registro disponible;;;;;;;;;;;
+;;;4;Revisar una opcion del listado;Se muestran numero de cuotas, valor de la cuota, tasa de interes aplicable y cuota inicial;;;;;;;;;;;
+;;;5;Revisar el formato de cuota periodica y cuota inicial;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;Test Case;MOBILE - Validar seleccion unica de opcion de financiacion y bloqueo al continuar sin seleccion;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 movil con opciones de financiacion visibles.;La app solo permite una opcion seleccionada y no permite continuar sin seleccion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Visualizar las opciones de financiacion sin seleccionar ninguna;Ninguna opcion queda marcada;;;;;;;;;;;
+;;;4;Intentar continuar con el proceso;La app no permite avanzar;;;;;;;;;;;
+;;;5;Seleccionar una opcion valida de financiacion;Solo la opcion elegida queda seleccionada;;;;;;;;;;;
+;;;6;Intentar seleccionar una segunda opcion diferente;La app reemplaza la seleccion anterior o mantiene una unica seleccion activa;;;;;;;;;;;
+;Test Case;MOBILE - Validar visualizacion de lienzo de firma digital tras seleccionar una opcion de financiacion;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 movil con una opcion de financiacion seleccionada.;La app muestra el lienzo de firma digital segun HU ESD-141.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Continuar con el proceso;La app muestra el recuadro con el lienzo de firma digital;;;;;;;;;;;
+;Test Case;MOBILE - Validar obligatoriedad de firma con contenido antes de mostrar aviso de privacidad;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 movil con una opcion de financiacion seleccionada.;El aviso de privacidad solo aparece cuando existe firma valida con trazo en mobile.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Visualizar el lienzo de firma sin realizar trazos;El lienzo permanece vacio;;;;;;;;;;;
+;;;5;Intentar continuar con el proceso;La app no considera valida la firma y no muestra el check de aviso de privacidad;;;;;;;;;;;
+;;;6;Realizar al menos un trazo dentro del lienzo;La app reconoce una firma con contenido valido;;;;;;;;;;;
+;;;7;Visualizar la seccion posterior a la firma;Se muestra el check del aviso de privacidad despues de validar la firma;;;;;;;;;;;
+;Test Case;MOBILE - Validar apertura embebida del aviso de privacidad y habilitacion del boton Enviar solo con check marcado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 movil con opcion de financiacion seleccionada y firma valida diligenciada.;La app abre el aviso de privacidad embebido y habilita Enviar solo con el check marcado.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente el Paso 1;La app permite ingresar al Paso 2;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion y diligenciar una firma valida;La app muestra el check del aviso de privacidad;;;;;;;;;;;
+;;;4;Seleccionar el texto subrayado del aviso de privacidad;La app muestra embebida la URL configurada del aviso de privacidad;;;;;;;;;;;
+;;;5;Verificar el estado inicial del boton Enviar sin marcar el check;El boton Enviar permanece deshabilitado;;;;;;;;;;;
+;;;6;Marcar el check del aviso de privacidad;El boton Enviar se habilita;;;;;;;;;;;
+;Test Case;MOBILE - Validar creacion exitosa de financiacion, generacion de volante y descarga con nombre esperado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en Paso 2 movil con opcion seleccionada, firma valida y check de privacidad marcado. Servicio Creditos/Crear disponible.;La solicitud se crea exitosamente en mobile y el volante se genera para descarga con el nombre definido.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas, completar el Paso 1 y acceder al Paso 2;La app permite continuar con la solicitud;;;;;;;;;;;
+;;;3;Seleccionar una opcion valida de financiacion;La opcion queda seleccionada correctamente;;;;;;;;;;;
+;;;4;Diligenciar una firma valida y marcar el check del aviso de privacidad;El boton Enviar queda habilitado;;;;;;;;;;;
+;;;5;Seleccionar el boton Enviar;La app invoca el servicio Creditos Crear;;;;;;;;;;;
+;;;6;Recibir respuesta exitosa del servicio Creditos Crear;La app genera el volante de confirmacion de la financiacion;;;;;;;;;;;
+;;;7;Seleccionar la opcion de descarga del volante;El archivo descargado sigue el formato financiacion_express_DD/MM/AAAA_YYYY con la fecha de generacion y el numero de cuenta asociado;;;;;;;;;;;
+;Test Case;MOBILE - Validar contenido completo del volante de confirmacion generado;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con financiacion creada exitosamente en mobile y volante disponible.;El volante generado en mobile contiene toda la informacion requerida por la HU.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar una financiacion express exitosa;La app genera el volante de confirmacion;;;;;;;;;;;
+;;;3;Abrir el volante generado;Se visualiza el documento de confirmacion;;;;;;;;;;;
+;;;4;Revisar header, titulo, numero de orden, cliente y direccion;El documento contiene la informacion general esperada;;;;;;;;;;;
+;;;5;Revisar la seccion Datos del solicitante;El documento contiene tipo de documento, numero documento, fecha expedicion, lugar expedicion, en calidad y nombre completo;;;;;;;;;;;
+;;;6;Revisar la seccion Financiacion Express;El documento contiene cedula, saldo total, saldo a financiar, numero de cuotas, interes, cuota periodica, numero proceso y mensaje personalizado;;;;;;;;;;;
+;;;7;Revisar la seccion Cliente Digital, la autorizacion de tratamiento de datos, firma y fecha hora de impresion;El documento contiene todos los datos exigidos por la HU;;;;;;;;;;;
+;;;8;Revisar los valores monetarios visibles del volante;Los valores monetarios muestran separador de miles con coma, separador decimal con punto y exactamente dos decimales;;;;;;;;;;;
+;Test Case;MOBILE - Validar adjuncion exitosa de volante y fotografias al proceso y mensaje final de confirmacion;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con respuesta exitosa de Creditos/Crear en mobile. Servicio AnexarArchivo disponible.;La app adjunta volante y fotografias y muestra mensaje final con numero de proceso.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar exitosamente la financiacion express;La app genera el volante de confirmacion;;;;;;;;;;;
+;;;3;Esperar el envio de volante y fotografias al servicio Controlador procesos AnexarArchivo;La app adjunta correctamente los archivos requeridos al proceso;;;;;;;;;;;
+;;;4;Visualizar la respuesta final del flujo;Se muestran los mensajes Tu financiacion ha sido creada y Numero de proceso XXXXXXX con el valor IngNumeroProceso retornado;;;;;;;;;;;
+;;;5;Seleccionar la opcion Volver al inicio;La app redirige al home del sistema;;;;;;;;;;;
+;Test Case;MOBILE - Validar mensaje de error y reintento ilimitado cuando falla Creditos Crear;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en Paso 2 movil con datos validos para envio. Servicio Creditos/Crear con respuesta de error.;La app informa el error de financiacion y permite reintentar sin limite.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas, completar Paso 1 y llegar al Paso 2 con datos validos;La app deja disponible el boton Enviar;;;;;;;;;;;
+;;;3;Seleccionar el boton Enviar;La app invoca el servicio Creditos Crear;;;;;;;;;;;
+;;;4;Recibir respuesta de error del servicio Creditos Crear;La app muestra el mensaje No fue posible completar la financiacion, por favor intenta nuevamente mas tarde;;;;;;;;;;;
+;;;5;Seleccionar la opcion de reintento disponible para repetir la operacion;La app permite reintentar la operacion sin limite establecido;;;;;;;;;;;
+;Test Case;MOBILE - Validar mensaje de error cuando no se crea la solicitud durante el procesamiento;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en mobile. El proceso de radicado falla sin crear la solicitud.;La app muestra mensaje de error de procesamiento y ofrece reintentar o volver al inicio.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar el flujo hasta el envio;La app invoca el procesamiento de la solicitud;;;;;;;;;;;
+;;;3;Recibir la condicion de fallo en la cual no se crea la solicitud de financiacion;La app muestra el mensaje No fue posible completar tu solicitud. Ocurrio un error durante el procesamiento. Verifica tu conexion o intentalo mas tarde.;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en la pantalla de error;Se muestran las opciones Reintentar y Volver al inicio;;;;;;;;;;;
+;;;5;Seleccionar Reintentar;La app vuelve a intentar la conexion con el servicio;;;;;;;;;;;
+;;;6;Seleccionar Volver al inicio;La app redirige al home del sistema;;;;;;;;;;;
+;Test Case;MOBILE - Validar mensaje de error cuando la solicitud se crea pero falla la adjuncion de archivos;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en mobile con solicitud creada exitosamente pero con fallo en AnexarArchivo.;La app muestra mensaje de error por adjuntos fallidos y ofrece reintentar o volver al inicio.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y completar el flujo hasta el envio;La app crea la solicitud de financiacion;;;;;;;;;;;
+;;;3;Recibir fallo del servicio Controlador procesos AnexarArchivo al intentar adjuntar volante y fotografias;La app muestra el mensaje Ocurrio un error durante el procesamiento. Verifica tu conexion a internet o intenta nuevamente mas tarde. Tambien puedes contactarnos a traves de la linea 01 8000 971 903, donde con gusto te brindaremos asistencia.;;;;;;;;;;;
+;;;4;Visualizar las acciones disponibles en la pantalla de error;Se muestran las opciones Reintentar y Volver al inicio;;;;;;;;;;;
+;;;5;Seleccionar Reintentar;La app vuelve a intentar la conexion con el servicio;;;;;;;;;;;
+;;;6;Seleccionar Volver al inicio;La app redirige al home del sistema;;;;;;;;;;;
+;Test Case;MOBILE - Validar auditoria de las acciones de Financiacion express segun HU ESD-187;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a Financiacion express en mobile. Auditoria habilitada segun dependencia HU ESD-187.;Todas las acciones del usuario en la pantalla movil quedan registradas en auditoria.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria asociado a las acciones de Financiacion express en canal mobile y validar fecha de registro, canal, dispositivo, ip publica, usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log registra la informacion correspondiente a las acciones ejecutadas por el usuario;;;;;;;;;;;
+;Test Case;MOBILE - Validar diseno segun figma para home y flujo de Financiacion express en mobile;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a home y flujo mobile de Financiacion express. Diseno figma disponible como referencia del producto.;Las pantallas mobile del alcance mantienen consistencia visual con el diseno aprobado.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la app movil de Oficina Virtual ESSA;Se visualiza la pantalla de inicio de sesion;;;;;;;;;;;
+;;;2;Autenticarse con credenciales validas y visualizar el home Gestion de facturacion;El home mobile carga con los elementos del alcance visibles;;;;;;;;;;;
+;;;3;Validar el elemento Financiacion express y su ubicacion visual en el home contra el diseno figma;Iconos, colores, tipografia, alineacion y ubicacion coinciden con la referencia aprobada;;;;;;;;;;;
+;;;4;Seleccionar Financiacion express y visualizar Paso 1 y Paso 2;Las pantallas del flujo cargan correctamente;;;;;;;;;;;
+;;;5;Validar visualmente Paso 1 y Paso 2 contra el diseno figma;Iconos, colores, tipografia, alineacion, textos y consistencia visual coinciden con la referencia aprobada;;;;;;;;;;;

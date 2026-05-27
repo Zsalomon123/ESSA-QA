@@ -1,0 +1,116 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar visualizacion de pantalla pre login con accesos directos y opciones de autenticacion;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Custom policy B2C_1A_SIGNUP_SIGNIN desplegada. Variables de entorno de frontend configuradas. Servicios de accesos directos disponibles.;El usuario visualiza la pantalla pre login con accesos directos y las opciones Ingresar y Registrarme.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Observar la seccion de accesos directos;Se visualizan los accesos directos Paga tu factura, Reportar danos, Oficinas, Identificanos e Informacion.;;;;;;;;;;;
+;;;3;Observar las opciones de autenticacion;Se visualizan las opciones Ingresar y Registrarme.;;;;;;;;;;;
+;Test Case;Validar acceso directo Paga tu factura sin autenticacion;;;;Por Analizar;Integracion;Positiva;Servicios de accesos directos disponibles.;El usuario accede al enlace Paga tu factura sin autenticarse y es redirigido a la URL externa configurada.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar el acceso directo Paga tu factura;El sistema redirige al usuario a la URL externa https://sites.placetopay.com/essa/login.;;;;;;;;;;;
+;Test Case;Validar acceso directo Reportar danos sin autenticacion;;;;Por Analizar;Integracion;Positiva;Servicios de accesos directos disponibles. Flujo ESD-44 implementado para reporte sin cuenta.;El usuario accede a Reportar danos sin autenticarse y navega al flujo sin cuenta.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar el acceso directo Reportar danos;El sistema redirige al usuario a la funcionalidad de reporte de dano sin cuenta definida para ESD-44.;;;;;;;;;;;
+;Test Case;Validar acceso directo Oficinas sin opcion de pedir turno;;;;Por Analizar;Integracion;Positiva;Servicios de accesos directos disponibles. Funcionalidades ESD-74 y ESD-75 disponibles.;El usuario accede a Oficinas sin autenticarse y visualiza la funcionalidad sin opcion de pedir turno.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar el acceso directo Oficinas;El sistema redirige al usuario a la funcionalidad de oficinas.;;;;;;;;;;;
+;;;3;Observar las opciones disponibles en la funcionalidad Oficinas;No se visualiza la opcion de pedir un turno.;;;;;;;;;;;
+;Test Case;Validar acceso directo Identificanos sin autenticacion;;;;Por Analizar;Integracion;Positiva;Servicios de accesos directos disponibles. Funcionalidad ESD-49 disponible.;El usuario accede a Identificanos sin autenticarse y navega a la funcionalidad correspondiente.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar el acceso directo Identificanos;El sistema redirige al usuario a la funcionalidad definida en ESD-49.;;;;;;;;;;;
+;Test Case;Validar acceso directo Informacion sin autenticacion;;;;Por Analizar;Integracion;Positiva;Servicios de accesos directos disponibles. Funcionalidad ESD-51 disponible.;El usuario accede a Informacion sin autenticarse y navega a la funcionalidad correspondiente.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar el acceso directo Informacion;El sistema redirige al usuario a la funcionalidad definida en ESD-51.;;;;;;;;;;;
+;Test Case;Validar redireccion a B2C desde la opcion Ingresar;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Custom policy B2C_1A_SIGNUP_SIGNIN desplegada. Redirect URI registrado como SPA.;El usuario es redirigido al flujo de autenticacion B2C al seleccionar Ingresar.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema redirige al usuario al flujo de autenticacion gestionado por Azure AD B2C mediante un enlace embebido.;;;;;;;;;;;
+;Test Case;Validar redireccion a B2C desde la opcion Registrarme;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Custom policy B2C_1A_SIGNUP_SIGNIN desplegada. Redirect URI registrado como SPA.;El usuario es redirigido al flujo de autenticacion B2C al seleccionar Registrarme.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Registrarme;El sistema redirige al usuario al flujo de autenticacion gestionado por Azure AD B2C mediante un enlace embebido.;;;;;;;;;;;
+;Test Case;Validar envio del atributo de compania ESSA durante la redireccion a B2C;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Parametrizacion del atributo de compania ESSA configurada.;El flujo de autenticacion envia el atributo que identifica a ESSA como compania consumidora del servicio B2C.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema inicia la redireccion al flujo B2C.;;;;;;;;;;;
+;;;3;Inspeccionar la solicitud enviada al servicio B2C;La solicitud incluye el atributo parametrizado que identifica a ESSA como compania consumidora del servicio.;;;;;;;;;;;
+;Test Case;Validar inyeccion de channelName web en la peticion authorize;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Custom policy B2C_1A_SIGNUP_SIGNIN desplegada.;La peticion al endpoint authorize incluye el parametro channelName con valor web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema inicia la redireccion al flujo B2C.;;;;;;;;;;;
+;;;3;Inspeccionar la peticion enviada al endpoint authorize;La URL enviada al endpoint authorize incluye el parametro channelName=web.;;;;;;;;;;;
+;Test Case;Validar inyeccion de channelName web en la peticion token;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Custom policy B2C_1A_SIGNUP_SIGNIN desplegada.;La peticion al endpoint token incluye el parametro channelName con valor web.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar y completar autenticacion valida en B2C;El servicio B2C devuelve el authorization code para continuar el intercambio de tokens.;;;;;;;;;;;
+;;;3;Inspeccionar la peticion enviada al endpoint token;La solicitud al endpoint token incluye el parametro channelName=web.;;;;;;;;;;;
+;Test Case;Validar que la gestion de credenciales e intentos fallidos depende de B2C;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo.;La autenticacion delega la validacion de credenciales y control de intentos fallidos al servicio B2C sin aplicar logica propia en ESSA.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema redirige al flujo de autenticacion B2C.;;;;;;;;;;;
+;;;3;Ingresar credenciales invalidas en la pantalla B2C;El mensaje y la gestion del intento fallido son controlados por B2C sin validaciones propias en la oficina virtual.;;;;;;;;;;;
+;Test Case;Validar autenticacion exitosa con recepcion de tokens y creacion de sesion local;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. MSAL configurado con cache en localStorage.;La autenticacion exitosa crea la sesion local en la oficina virtual con los tokens emitidos por B2C.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema redirige al flujo de autenticacion B2C.;;;;;;;;;;;
+;;;3;Ingresar credenciales validas en la pantalla B2C y completar la autenticacion;El servicio B2C confirma la autenticacion exitosa y retorna id_token, access_token y refresh_token.;;;;;;;;;;;
+;;;4;Retornar a la oficina virtual despues de la autenticacion;MSAL crea la sesion del usuario y almacena la informacion de la cuenta y los tokens en localStorage.;;;;;;;;;;;
+;Test Case;Validar extraccion de claims del usuario despues de autenticacion exitosa;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. MSAL configurado con cache en localStorage.;La sesion autenticada permite obtener los claims requeridos del usuario para el consumo del sistema.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar y completar autenticacion valida en B2C;El sistema retorna a la oficina virtual con sesion autenticada.;;;;;;;;;;;
+;;;3;Consultar la informacion del usuario autenticado a traves de MSAL;Se obtienen los claims oid, email, name, given_name, family_name, phone_number y personInformation.;;;;;;;;;;;
+;Test Case;Validar redireccion a actualizacion de datos en primer ingreso;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Pantalla ESD-14 implementada y disponible.;En la primera autenticacion, el usuario es redirigido a la pantalla de actualizacion de datos.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar y completar autenticacion valida con un usuario de primer ingreso;El sistema crea la sesion local del usuario.;;;;;;;;;;;
+;;;3;Esperar la navegacion posterior a la autenticacion;El sistema redirige al usuario a la pantalla ESD-14 Actualizar datos de usuario.;;;;;;;;;;;
+;Test Case;Validar redireccion a gestion de facturacion en ingreso recurrente;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Pantalla ESD-38 implementada y disponible.;En una autenticacion recurrente, el usuario es redirigido a la pantalla de gestion de facturacion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar y completar autenticacion valida con un usuario recurrente;El sistema crea la sesion local del usuario.;;;;;;;;;;;
+;;;3;Esperar la navegacion posterior a la autenticacion;El sistema redirige al usuario a la pantalla ESD-38 Gestion de facturacion.;;;;;;;;;;;
+;Test Case;Validar mensaje informativo y reintento cuando la autenticacion falla;;;;Por Analizar;Integracion;Negativa;Azure AD B2C disponible y operativo.;Cuando la autenticacion falla, el usuario visualiza un mensaje informativo y puede reintentar sin perder la navegacion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema redirige al flujo de autenticacion B2C.;;;;;;;;;;;
+;;;3;Ingresar credenciales invalidas en la pantalla B2C;El servicio responde con fallo de autenticacion.;;;;;;;;;;;
+;;;4;Retornar al flujo de la oficina virtual;El sistema muestra un mensaje informativo acorde a la respuesta de B2C y permite reintentar el acceso sin perder la navegacion.;;;;;;;;;;;
+;Test Case;Validar mensaje y reintento cuando ocurre error tecnico con B2C;;;;Por Analizar;Integracion;Negativa;Azure AD B2C disponible y operativo. Manejo de errores tecnicos implementado.;Ante un error tecnico de comunicacion con B2C, el usuario visualiza un mensaje claro y puede reintentar el inicio de sesion.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Seleccionar la opcion Ingresar;El sistema inicia la comunicacion con B2C.;;;;;;;;;;;
+;;;3;Provocar una condicion de timeout, servicio no disponible o error de red durante la comunicacion con B2C;La autenticacion no puede completarse.;;;;;;;;;;;
+;;;4;Observar la respuesta del sistema en la oficina virtual;Se muestra un mensaje indicando que no fue posible completar el inicio de sesion y se permite reintentar.;;;;;;;;;;;
+;Test Case;Validar fallback en ruta protegida mientras el estado es startup;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Componente de ruta protegida implementado.;En rutas protegidas, el sistema muestra un fallback mientras el estado de autenticacion esta en startup.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a una ruta protegida de la aplicacion web bajo el patron /app/*;El sistema evalua el estado de autenticacion.;;;;;;;;;;;
+;;;2;Mantener el estado de autenticacion con valor startup;Se muestra un componente de fallback sin exponer contenido protegido.;;;;;;;;;;;
+;Test Case;Validar loginRedirect automatico en ruta protegida para usuario no autenticado;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Componente de ruta protegida implementado.;El acceso a una ruta protegida sin sesion activa dispara automaticamente el loginRedirect.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar directamente a una ruta protegida de la aplicacion web bajo el patron /app/* sin sesion iniciada;El sistema evalua el estado de autenticacion.;;;;;;;;;;;
+;;;2;Esperar la accion del componente de ruta protegida;El sistema dispara automaticamente loginRedirect hacia el flujo B2C.;;;;;;;;;;;
+;Test Case;Validar renderizacion de contenido protegido para usuario autenticado;;;;Por Analizar;Integracion;Positiva;Azure AD B2C disponible y operativo. Componente de ruta protegida implementado.;El usuario autenticado puede visualizar el contenido de una ruta protegida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA y completar autenticacion valida;El usuario queda con sesion autenticada.;;;;;;;;;;;
+;;;2;Navegar a una ruta protegida de la aplicacion web bajo el patron /app/*;El sistema valida que el usuario esta autenticado.;;;;;;;;;;;
+;;;3;Observar el resultado de la navegacion;Se renderiza el contenido protegido.;;;;;;;;;;;
+;Test Case;Validar registro de auditoria en autenticacion exitosa;;;;Por Analizar;Integracion;Positiva;Modulo de auditoria ESD-187 implementado y disponible. Azure AD B2C operativo.;La autenticacion exitosa genera un registro de auditoria con la informacion requerida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA.;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general.;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas.;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights.;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria generado por una autenticacion exitosa y validar los datos registrados;Se confirma que el log incluye fecha de registro, canal, dispositivo, ip publica, usuario opcional, cuenta opcional, servicio, verbo HTTP, resultado HTTP, estado e identificador unico de trazabilidad.;;;;;;;;;;;
+;Test Case;Validar registro de auditoria en autenticacion fallida;;;;Por Analizar;Integracion;Negativa;Modulo de auditoria ESD-187 implementado y disponible. Azure AD B2C operativo.;La autenticacion fallida genera un registro de auditoria con la informacion requerida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA.;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general.;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas.;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights.;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria generado por una autenticacion fallida y validar los datos registrados;Se confirma que el log incluye fecha de registro, canal, dispositivo, ip publica, usuario opcional, cuenta opcional, servicio, verbo HTTP, resultado HTTP, estado e identificador unico de trazabilidad.;;;;;;;;;;;
+;Test Case;Validar registro de auditoria en error tecnico de autenticacion;;;;Por Analizar;Integracion;Negativa;Modulo de auditoria ESD-187 implementado y disponible. Azure AD B2C operativo.;El error tecnico durante la autenticacion genera un registro de auditoria con la informacion requerida.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA.;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general.;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas.;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights.;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria generado por un error tecnico de autenticacion y validar los datos registrados;Se confirma que el log incluye fecha de registro, canal, dispositivo, ip publica, usuario opcional, cuenta opcional, servicio, verbo HTTP, resultado HTTP, estado e identificador unico de trazabilidad.;;;;;;;;;;;
+;Test Case;Validar diseno de pantalla pre login web segun Figma;;;;Por Analizar;Integracion;Positiva;Diseno UX UI vigente disponible para consulta.;La pantalla pre login web cumple con el diseno definido en Figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Comparar la pantalla pre login con el diseno UX UI vigente en Figma;Los iconos, colores, tipografia, alineacion y ubicacion de elementos coinciden con el diseno aprobado para web.;;;;;;;;;;;
+;Test Case;Validar diseno de flujos de error web segun Figma;;;;Por Analizar;Integracion;Positiva;Diseno UX UI vigente disponible para consulta. Manejo de errores implementado.;Los flujos de error web cumplen con el diseno definido en Figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Generar un fallo de autenticacion o un error tecnico controlado;El sistema presenta el flujo de error correspondiente.;;;;;;;;;;;
+;;;3;Comparar el flujo de error con el diseno UX UI vigente en Figma;Los iconos, colores, tipografia, alineacion, textos y ubicacion de elementos coinciden con el diseno aprobado para web.;;;;;;;;;;;
+;Test Case;Validar flujo responsive de la aplicacion web en inicio de sesion;;;;Por Analizar;Integracion;Positiva;Diseno responsive definido. Navegadores compatibles disponibles.;La aplicacion web mantiene el flujo de inicio de sesion y la visualizacion correcta en un viewport responsive.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion web de la oficina virtual ESSA desde un navegador en escritorio;Se visualiza la pantalla previa al inicio de sesion.;;;;;;;;;;;
+;;;2;Cambiar el viewport a una resolucion responsive aplicable para la web;Los componentes de la pantalla se ajustan sin superposiciones ni perdida de funcionalidad.;;;;;;;;;;;
+;;;3;Seleccionar la opcion Ingresar en el viewport responsive;El flujo de autenticacion continua correctamente sin cortes de diseno ni errores visuales.;;;;;;;;;;;
+;Test Case;Validar diseno de pantalla pre login mobile segun Figma;;;;Por Analizar;Integracion;Positiva;Diseno UX UI vigente disponible para consulta. Version movil contemplada en la HU.;La pantalla pre login mobile cumple con el diseno definido en Figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion de la oficina virtual ESSA desde un dispositivo movil o simulador mobile;Se visualiza la pantalla previa al inicio de sesion en mobile.;;;;;;;;;;;
+;;;2;Comparar la pantalla pre login mobile con el diseno UX UI vigente en Figma;Los iconos, colores, tipografia, alineacion y ubicacion de elementos coinciden con el diseno aprobado para mobile.;;;;;;;;;;;
+;Test Case;Validar diseno de flujos de error mobile segun Figma;;;;Por Analizar;Integracion;Positiva;Diseno UX UI vigente disponible para consulta. Version movil contemplada en la HU.;Los flujos de error mobile cumplen con el diseno definido en Figma.;ESSA\Oficina virtual ESSA;ESSA\Sprint 16;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion de la oficina virtual ESSA desde un dispositivo movil o simulador mobile;Se visualiza la pantalla previa al inicio de sesion en mobile.;;;;;;;;;;;
+;;;2;Generar un fallo de autenticacion o un error tecnico controlado en mobile;El sistema presenta el flujo de error correspondiente.;;;;;;;;;;;
+;;;3;Comparar el flujo de error con el diseno UX UI vigente en Figma;Los iconos, colores, tipografia, alineacion, textos y ubicacion de elementos coinciden con el diseno aprobado para mobile.;;;;;;;;;;;

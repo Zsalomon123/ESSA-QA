@@ -1,0 +1,362 @@
+ID;Work Item Type;Title;Test Step;Step Action;Step Expected;Custom.AutomationSstatus;Custom.TipodePruebas;Custom.CategoriadePrueba;Custom.Precondiciones;Custom.ResultadoGeneral;Area Path;Iteration Path;Assigned To;State;Tags;Priority
+;Test Case;Validar acceso a Ver en mapa desde Afectaciones a mi cuenta web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la oficina virtual con al menos una cuenta asociada y afectaciones activas disponibles.;El usuario visualiza la opcion Ver en mapa y accede a la pantalla geografica conservando la cuenta seleccionada.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;La cuenta queda seleccionada;;;;;;;;;;;
+;;;7;Validar la opcion Ver en mapa;Se visualiza el elemento de accion Ver en mapa habilitado;;;;;;;;;;;
+;;;8;Seleccionar Ver en mapa;El sistema redirige a la pantalla de visualizacion geografica y conserva la cuenta previamente seleccionada;;;;;;;;;;;
+;Test Case;Validar Ver en mapa deshabilitado sin afectaciones web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la oficina virtual con una cuenta asociada sin afectaciones activas.;El usuario no puede acceder al mapa cuando la cuenta no tiene afectaciones activas.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Seleccionar una cuenta sin afectaciones activas;La cuenta queda seleccionada;;;;;;;;;;;
+;;;7;Validar la opcion Ver en mapa;La opcion Ver en mapa se muestra deshabilitada;;;;;;;;;;;
+;Test Case;Validar carga inicial del mapa y selector con cuenta previa web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con varias cuentas asociadas y una cuenta previamente seleccionada desde ESD-260.;La pantalla del mapa carga el selector obligatorio y deja seleccionada por defecto la cuenta previa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;La cuenta queda seleccionada;;;;;;;;;;;
+;;;7;Seleccionar Ver en mapa;Se visualiza la pantalla de mapa con selector de cuentas;;;;;;;;;;;
+;;;8;Validar el selector de cuentas;El selector es de unica seleccion y de uso obligatorio;;;;;;;;;;;
+;;;9;Validar la cuenta seleccionada por defecto;Se muestra seleccionada por defecto la cuenta previamente elegida en ESD-260;;;;;;;;;;;
+;Test Case;Validar seleccion automatica de la primera cuenta cuando no existe una previa web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con varias cuentas asociadas y sin una cuenta previa seleccionada desde ESD-260.;El sistema selecciona automaticamente la primera cuenta disponible del usuario al ingresar al mapa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Ingresar a Ver en mapa sin cuenta previa seleccionada;Se visualiza la pantalla de mapa con selector de cuentas;;;;;;;;;;;
+;;;7;Validar la cuenta seleccionada por defecto;El sistema selecciona automaticamente la primera cuenta de la lista asociada al usuario;;;;;;;;;;;
+;Test Case;Validar que el selector liste solo cuentas del usuario con afectaciones activas web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con multiples cuentas asociadas y afectaciones activas en un subconjunto de ellas.;El selector presenta solo cuentas asociadas al usuario y disponibles para seleccion cuando tienen afectaciones activas.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Desplegar el selector de cuentas;Se listan las cuentas asociadas al usuario autenticado;;;;;;;;;;;
+;;;7;Validar las cuentas disponibles para seleccionar;Solo las cuentas con afectaciones activas se muestran disponibles para seleccion;;;;;;;;;;;
+;Test Case;Validar mensaje sin resultados y accion Realizar un reporte web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la pantalla de mapa con una cuenta seleccionada sin afectaciones activas al momento de la consulta.;El sistema informa que no hay interrupciones activas y permite redirigir a realizar un reporte.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta sin afectaciones activas;El sistema realiza la consulta de afectaciones;;;;;;;;;;;
+;;;7;Validar el titulo del mensaje;Se muestra el titulo No encontramos resultados.;;;;;;;;;;;
+;;;8;Validar el texto del mensaje;Se muestra el texto Tus cuentas no presentan interrupcion por reportes de danos ni suspensiones programadas;;;;;;;;;;;
+;;;9;Validar la accion disponible;Se visualiza la accion Realizar un reporte;;;;;;;;;;;
+;;;10;Seleccionar Realizar un reporte;El sistema redirige a la funcionalidad de la HU ESD-44 para reportar un dano a una cuenta;;;;;;;;;;;
+;Test Case;Validar consulta de afectaciones activas en curso web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la pantalla de mapa con una cuenta seleccionada que tiene afectaciones activas e historicas.;El sistema muestra solo las afectaciones activas o en curso relacionadas con la cuenta seleccionada.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas e historicas;El sistema consulta las afectaciones relacionadas;;;;;;;;;;;
+;;;7;Validar el resultado de la consulta;Solo se muestran danos o emergencias no programadas y suspensiones o desconexiones que estan activas o en curso;;;;;;;;;;;
+;Test Case;Validar posicionamiento geografico y diametro de 50 metros web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con una cuenta seleccionada que tiene afectaciones activas y coordenadas geograficas validas.;El mapa se centra en la ubicacion de la cuenta y dibuja el area circular de 50 metros.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;El sistema consulta la ubicacion geografica por el metodo Clientes/clientes;;;;;;;;;;;
+;;;7;Validar latitud y longitud obtenidas;El sistema obtiene latitud y longitud de la cuenta seleccionada;;;;;;;;;;;
+;;;8;Validar el mapa;El mapa se posiciona automaticamente sobre la ubicacion geografica de la cuenta;;;;;;;;;;;
+;;;9;Validar el area dibujada;Se dibuja un area circular con diametro de 50 metros alrededor del punto geografico de la cuenta;;;;;;;;;;;
+;Test Case;Validar color rojo para danos o emergencias no programadas web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con una cuenta que tiene danos o emergencias no programadas activas.;Las afectaciones de tipo dano o emergencia no programada se representan en color rojo.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con danos o emergencias no programadas activas;El sistema carga la afectacion en el mapa;;;;;;;;;;;
+;;;7;Validar la representacion visual;El area o marcador de la afectacion se muestra en color rojo;;;;;;;;;;;
+;Test Case;Validar color naranja para suspensiones o desconexiones programadas web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con una cuenta que tiene suspensiones o desconexiones programadas activas.;Las afectaciones de tipo suspension o desconexion programada se representan en color naranja.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con suspensiones o desconexiones programadas activas;El sistema carga la afectacion en el mapa;;;;;;;;;;;
+;;;7;Validar la representacion visual;El area o marcador de la afectacion se muestra en color naranja;;;;;;;;;;;
+;Test Case;Validar prioridad del color rojo cuando coexisten danos y suspensiones web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con una cuenta que presenta simultaneamente danos y suspensiones activas.;Cuando existen ambos tipos de afectacion el sistema prioriza el circulo rojo en la representacion del mapa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con danos y suspensiones activas;El sistema carga las afectaciones de la cuenta;;;;;;;;;;;
+;;;7;Validar la representacion visual final;El circulo de la afectacion se muestra en color rojo;;;;;;;;;;;
+;Test Case;Validar card informativa en modo solo lectura por afectacion web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con una cuenta que tiene una o mas afectaciones activas.;Cada afectacion activa se muestra en una card con informacion de solo lectura y formato esperado.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con las cards de afectaciones;;;;;;;;;;;
+;;;6;Validar una card informativa;La card muestra numero de reporte, fecha y hora de inicio, fecha y hora de finalizacion, numero de evento y tipo de afectacion en modo solo lectura;;;;;;;;;;;
+;Test Case;Validar numero de reporte numerico y longitud maxima web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con afectaciones activas cargadas en la pantalla de mapa.;El numero de reporte mostrado en la card cumple la regla numerica y no excede 20 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar el numero de reporte mostrado en una card;El valor es numerico y no permite exceder la cantidad de caracteres maxima de 20;;;;;;;;;;;
+;Test Case;Validar numero de evento numerico y longitud maxima web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con afectaciones activas cargadas en la pantalla de mapa.;El numero de evento mostrado en la card cumple la regla numerica y no excede 20 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar el numero de evento mostrado en una card;El valor es numerico y no permite exceder la cantidad de caracteres maxima de 20;;;;;;;;;;;
+;Test Case;Validar formato de fecha y hora en cards web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con afectaciones activas cargadas en la pantalla de mapa.;Las fechas de inicio y finalizacion de las cards cumplen el formato DD/MM/AAAA HH:mm.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar fecha y hora de inicio y finalizacion;Los valores se muestran en formato DD/MM/AAAA HH:mm y son obligatorios en la card;;;;;;;;;;;
+;Test Case;Validar expansion de card con Ver detalles web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con multiples afectaciones activas cargadas en cards.;El usuario puede expandir una card y visualizar la informacion adicional sin recargar la pantalla.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Seleccionar Ver detalles en una card;La card se expande sin recargar la pantalla;;;;;;;;;;;
+;;;7;Validar la informacion expandida;Se muestran observaciones y causa de la afectacion seleccionada;;;;;;;;;;;
+;Test Case;Validar longitud maxima de observaciones expandida web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con una afectacion activa que contiene observaciones disponibles para visualizacion detallada.;Las observaciones mostradas en la card expandida no exceden 500 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Expandir una card con Ver detalles;Se visualizan las observaciones de la afectacion;;;;;;;;;;;
+;;;7;Revisar el contenido de Observaciones;El texto alfanumerico con caracteres especiales no permite exceder la cantidad maxima de 500 caracteres;;;;;;;;;;;
+;Test Case;Validar longitud maxima de causa expandida web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado con una afectacion activa que contiene causa disponible para visualizacion detallada.;La causa mostrada en la card expandida no excede 300 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Expandir una card con Ver detalles;Se visualiza la causa de la afectacion;;;;;;;;;;;
+;;;7;Revisar el contenido de Causa;El texto alfanumerico con caracteres especiales no permite exceder la cantidad maxima de 300 caracteres;;;;;;;;;;;
+;Test Case;Validar una sola card expandida simultaneamente web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con dos o mas cards de afectaciones visibles en la pantalla.;El sistema mantiene solo una card expandida a la vez y cierra automaticamente la anterior al abrir otra.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan dos o mas cards de afectaciones;;;;;;;;;;;
+;;;6;Seleccionar Ver detalles en la primera card;La primera card queda expandida;;;;;;;;;;;
+;;;7;Seleccionar Ver detalles en la segunda card;La primera card se cierra automaticamente y la segunda card queda expandida;;;;;;;;;;;
+;Test Case;Validar actualizacion integral al cambiar la cuenta seleccionada web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con dos o mas cuentas disponibles en el selector de la pantalla de mapa.;Al cambiar la cuenta el sistema limpia la informacion previa y actualiza mapa, zonas y cards con la nueva cuenta.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con una cuenta y sus afectaciones cargadas;;;;;;;;;;;
+;;;6;Cambiar la cuenta seleccionada en el desplegable;El sistema limpia las afectaciones previamente mostradas;;;;;;;;;;;
+;;;7;Validar la nueva consulta;El sistema consulta las afectaciones asociadas a la nueva cuenta;;;;;;;;;;;
+;;;8;Validar el mapa;El mapa se actualiza con la nueva ubicacion geografica;;;;;;;;;;;
+;;;9;Validar las zonas afectadas;Las zonas afectadas se dibujan nuevamente segun la nueva cuenta;;;;;;;;;;;
+;;;10;Validar las cards;Las cards de informacion se actualizan segun la nueva cuenta seleccionada;;;;;;;;;;;
+;Test Case;Validar mensaje de error tecnico y reintento web;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la pantalla de mapa con falla tecnica durante la consulta de afectaciones o ubicacion geografica.;El sistema muestra el mensaje de error definido y permite reintentar la consulta sin salir de la pantalla.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza la pantalla de mapa;;;;;;;;;;;
+;;;6;Provocar un error tecnico en la consulta de afectaciones o ubicacion;El sistema interrumpe la carga normal de la informacion;;;;;;;;;;;
+;;;7;Validar el mensaje de error;Se muestra el mensaje No fue posible consultar las afectaciones de la cuenta seleccionada. Por favor, intenta nuevamente.;;;;;;;;;;;
+;;;8;Seleccionar la opcion de reintento;El sistema permite consultar nuevamente sin salir de la pantalla;;;;;;;;;;;
+;Test Case;Validar registro de auditoria ESD-187 para acciones en el mapa web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con permisos para consultar registros de auditoria en Azure Application Insights.;La accion funcional realizada en la pantalla de mapa queda registrada con los datos de auditoria requeridos.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria de la accion realizada en Ver en mapa y validar Fecha de Registro, Canal web, Dispositivo, Ip Publica, Usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log copia toda la informacion correspondiente a la accion generada;;;;;;;;;;;
+;Test Case;Validar diseno de la pantalla Ver en mapa segun figma web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla Ver en mapa y diseno UX UI vigente disponible para consulta.;La pantalla web mantiene alineacion, iconos, colores y textos legibles de acuerdo con el diseno definido.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza la pantalla funcional;;;;;;;;;;;
+;;;6;Comparar la pantalla con el diseno UX UI vigente;Los iconos, colores, tipografia, alineacion, ubicacion de elementos y textos legibles coinciden con el figma web aprobado;;;;;;;;;;;
+;Test Case;Validar flujo responsive de Ver en mapa web;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la funcionalidad web desde un navegador en resolucion responsive.;La funcionalidad mantiene el flujo y la legibilidad al ajustar la vista responsive.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar al aplicativo web ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza la funcionalidad en resolucion desktop;;;;;;;;;;;
+;;;6;Cambiar la resolucion del navegador a una vista responsive;La pantalla se ajusta sin perder navegacion ni legibilidad;;;;;;;;;;;
+;;;7;Validar el flujo principal en responsive;El mapa, selector, cards, botones e iconos permanecen visibles, alineados y utilizables;;;;;;;;;;;
+;Test Case;Validar acceso a Ver en mapa desde Afectaciones a mi cuenta movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con al menos una cuenta asociada y afectaciones activas disponibles.;El usuario movil visualiza la opcion Ver en mapa y accede a la pantalla geografica conservando la cuenta seleccionada.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;La cuenta queda seleccionada;;;;;;;;;;;
+;;;7;Seleccionar Ver en mapa;El sistema redirige a la pantalla de visualizacion geografica y conserva la cuenta previamente seleccionada;;;;;;;;;;;
+;Test Case;Validar carga inicial de mapa y selector obligatorio movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con cuentas asociadas y afectaciones activas.;La pantalla movil muestra mapa y selector obligatorio con cuentas disponibles del usuario.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Validar el selector de cuentas;El selector es de unica seleccion y de uso obligatorio;;;;;;;;;;;
+;;;7;Validar las cuentas disponibles;Solo se muestran cuentas asociadas al usuario y disponibles para seleccion cuando tienen afectaciones activas;;;;;;;;;;;
+;Test Case;Validar cuenta previa seleccionada por defecto movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta previamente seleccionada desde ESD-260.;La pantalla movil deja seleccionada por defecto la cuenta previa al ingresar al mapa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;La cuenta queda seleccionada;;;;;;;;;;;
+;;;7;Seleccionar Ver en mapa;Se visualiza la pantalla de mapa con selector de cuentas;;;;;;;;;;;
+;;;8;Validar la cuenta seleccionada por defecto;Se muestra seleccionada por defecto la cuenta previamente elegida en ESD-260;;;;;;;;;;;
+;Test Case;Validar seleccion automatica de la primera cuenta cuando no existe una previa movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con varias cuentas asociadas y sin una cuenta previa seleccionada desde ESD-260.;El sistema selecciona automaticamente la primera cuenta disponible del usuario al ingresar al mapa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar a Danos y PQR - Danos y emergencias - Mis reportes - Afectaciones a mi cuenta;Se visualiza la funcionalidad Afectaciones a mi cuenta;;;;;;;;;;;
+;;;6;Ingresar a Ver en mapa sin cuenta previa seleccionada;Se visualiza la pantalla de mapa con selector de cuentas;;;;;;;;;;;
+;;;7;Validar la cuenta seleccionada por defecto;El sistema selecciona automaticamente la primera cuenta de la lista asociada al usuario;;;;;;;;;;;
+;Test Case;Validar mensaje sin resultados y accion Realizar un reporte movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con una cuenta sin afectaciones activas.;La aplicacion informa ausencia de resultados y permite redirigir a realizar un reporte.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta sin afectaciones activas;El sistema realiza la consulta de afectaciones;;;;;;;;;;;
+;;;7;Validar el titulo y texto del mensaje;Se muestra No encontramos resultados. y el texto Tus cuentas no presentan interrupcion por reportes de danos ni suspensiones programadas;;;;;;;;;;;
+;;;8;Seleccionar Realizar un reporte;La aplicacion redirige a la funcionalidad de la HU ESD-44;;;;;;;;;;;
+;Test Case;Validar posicionamiento geografico y diametro de 50 metros movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta que tiene afectaciones activas y datos geograficos disponibles.;La aplicacion movil centra el mapa en la ubicacion de la cuenta y dibuja el area circular de 50 metros.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con afectaciones activas;El sistema consulta ubicacion y afectaciones;;;;;;;;;;;
+;;;7;Validar el mapa y el area;El mapa se posiciona en la ubicacion de la cuenta y dibuja el area circular con diametro de 50 metros;;;;;;;;;;;
+;Test Case;Validar color rojo para danos o emergencias no programadas movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta que tiene danos o emergencias no programadas activas.;Las afectaciones de tipo dano o emergencia no programada se representan en color rojo.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con danos o emergencias no programadas activas;El sistema carga la afectacion en el mapa;;;;;;;;;;;
+;;;7;Validar la representacion visual;El area o marcador de la afectacion se muestra en color rojo;;;;;;;;;;;
+;Test Case;Validar color naranja para suspensiones o desconexiones programadas movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta que tiene suspensiones o desconexiones programadas activas.;Las afectaciones de tipo suspension o desconexion programada se representan en color naranja.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con suspensiones o desconexiones programadas activas;El sistema carga la afectacion en el mapa;;;;;;;;;;;
+;;;7;Validar la representacion visual;El area o marcador de la afectacion se muestra en color naranja;;;;;;;;;;;
+;Test Case;Validar prioridad del color rojo cuando coexisten danos y suspensiones movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta que presenta simultaneamente danos y suspensiones activas.;Cuando existen ambos tipos de afectacion el sistema prioriza el circulo rojo en la representacion del mapa.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con el selector de cuentas;;;;;;;;;;;
+;;;6;Seleccionar una cuenta con danos y suspensiones activas;El sistema carga las afectaciones de la cuenta;;;;;;;;;;;
+;;;7;Validar la representacion visual final;El circulo de la afectacion se muestra en color rojo;;;;;;;;;;;
+;Test Case;Validar card informativa en modo solo lectura por afectacion movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con una cuenta que tiene una o mas afectaciones activas.;Cada afectacion activa se muestra en una card con informacion de solo lectura y formato esperado.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con las cards de afectaciones;;;;;;;;;;;
+;;;6;Validar una card informativa;La card muestra numero de reporte, fecha y hora de inicio, fecha y hora de finalizacion, numero de evento y tipo de afectacion en modo solo lectura;;;;;;;;;;;
+;Test Case;Validar numero de reporte numerico y longitud maxima movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con afectaciones activas cargadas en la pantalla de mapa.;El numero de reporte mostrado en la card cumple la regla numerica y no excede 20 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar el numero de reporte mostrado en una card;El valor es numerico y no permite exceder la cantidad de caracteres maxima de 20;;;;;;;;;;;
+;Test Case;Validar numero de evento numerico y longitud maxima movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con afectaciones activas cargadas en la pantalla de mapa.;El numero de evento mostrado en la card cumple la regla numerica y no excede 20 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar el numero de evento mostrado en una card;El valor es numerico y no permite exceder la cantidad de caracteres maxima de 20;;;;;;;;;;;
+;Test Case;Validar formato de fecha y hora en cards movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con afectaciones activas cargadas en la pantalla de mapa.;Las fechas de inicio y finalizacion de las cards cumplen el formato DD/MM/AAAA HH:mm.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Revisar fecha y hora de inicio y finalizacion;Los valores se muestran en formato DD/MM/AAAA HH:mm y son obligatorios en la card;;;;;;;;;;;
+;Test Case;Validar expansion de card con Ver detalles movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con multiples afectaciones activas cargadas en cards.;El usuario puede expandir una card y visualizar la informacion adicional sin recargar la pantalla.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Seleccionar Ver detalles en una card;La card se expande sin recargar la pantalla;;;;;;;;;;;
+;;;7;Validar la informacion expandida;Se muestran observaciones y causa de la afectacion seleccionada;;;;;;;;;;;
+;Test Case;Validar longitud maxima de observaciones expandida movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con una afectacion activa que contiene observaciones disponibles para visualizacion detallada.;Las observaciones mostradas en la card expandida no exceden 500 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Expandir una card con Ver detalles;Se visualizan las observaciones de la afectacion;;;;;;;;;;;
+;;;7;Revisar el contenido de Observaciones;El texto alfanumerico con caracteres especiales no permite exceder la cantidad maxima de 500 caracteres;;;;;;;;;;;
+;Test Case;Validar longitud maxima de causa expandida movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con una afectacion activa que contiene causa disponible para visualizacion detallada.;La causa mostrada en la card expandida no excede 300 caracteres.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan las cards de afectaciones;;;;;;;;;;;
+;;;6;Expandir una card con Ver detalles;Se visualiza la causa de la afectacion;;;;;;;;;;;
+;;;7;Revisar el contenido de Causa;El texto alfanumerico con caracteres especiales no permite exceder la cantidad maxima de 300 caracteres;;;;;;;;;;;
+;Test Case;Validar una sola card expandida simultaneamente movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con multiples cards de afectaciones visibles.;La aplicacion movil expande una sola card a la vez y cierra automaticamente la anterior al abrir otra.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualizan dos o mas cards de afectaciones;;;;;;;;;;;
+;;;6;Seleccionar Ver detalles en la primera card;La primera card queda expandida;;;;;;;;;;;
+;;;7;Seleccionar Ver detalles en la segunda card;La primera card se cierra automaticamente y la segunda card queda expandida;;;;;;;;;;;
+;Test Case;Validar cambio de cuenta y actualizacion de informacion movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado en la aplicacion movil con dos o mas cuentas disponibles en el selector.;Al cambiar la cuenta se actualizan afectaciones, mapa, zonas y cards sin conservar informacion obsoleta.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;1
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza el mapa con una cuenta y sus afectaciones cargadas;;;;;;;;;;;
+;;;6;Cambiar la cuenta seleccionada en el desplegable;La aplicacion limpia la informacion previa;;;;;;;;;;;
+;;;7;Validar la nueva carga;La aplicacion consulta nuevas afectaciones, actualiza el mapa, redibuja zonas y actualiza cards;;;;;;;;;;;
+;Test Case;Validar mensaje de error tecnico y reintento movil;;;;Por Analizar;Integracion;Negativa;Usuario autenticado en la aplicacion movil con falla tecnica durante la consulta de afectaciones o ubicacion geografica.;La aplicacion muestra el mensaje de error definido y permite reintentar la consulta sin salir de la pantalla.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza la pantalla de mapa;;;;;;;;;;;
+;;;6;Provocar un error tecnico en la consulta de afectaciones o ubicacion;La aplicacion interrumpe la carga normal de la informacion;;;;;;;;;;;
+;;;7;Validar el mensaje de error;Se muestra el mensaje No fue posible consultar las afectaciones de la cuenta seleccionada. Por favor, intenta nuevamente.;;;;;;;;;;;
+;;;8;Seleccionar la opcion de reintento;La aplicacion permite consultar nuevamente sin salir de la pantalla;;;;;;;;;;;
+;Test Case;Validar registro de auditoria ESD-187 para acciones en el mapa movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con permisos para consultar registros de auditoria en Azure Application Insights.;La accion funcional realizada en la pantalla de mapa movil queda registrada con los datos de auditoria requeridos.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;2
+;;;1;Ingresar al Microsoft Azure https://portal.azure.com/#home;Se visualiza el home de ESSA;;;;;;;;;;;
+;;;2;En los recursos seleccionar el de tipo Application Insights;Se visualiza el menu y la informacion general;;;;;;;;;;;
+;;;3;Del menu lateral izquierdo seleccionar la opcion Supervision y luego la opcion Registros;Se visualiza modal Centro de consultas;;;;;;;;;;;
+;;;4;Cerrar el Centro de consultas y luego seleccionar el boton Seleccionar una tabla;Se despliegan las tablas del Application Insights;;;;;;;;;;;
+;;;5;En la tabla de traces buscar el log de auditoria de la accion realizada en Ver en mapa y validar Fecha de Registro, Canal movil, Dispositivo, Ip Publica, Usuario, cuenta, servicio, verbo HTTP, resultado HTTP, estado e identificador unico;Se confirma que el log copia toda la informacion correspondiente a la accion generada;;;;;;;;;;;
+;Test Case;Validar diseno de la pantalla Ver en mapa segun figma movil;;;;Por Analizar;Integracion;Positiva;Usuario autenticado con acceso a la pantalla Ver en mapa en aplicacion movil y diseno UX UI vigente disponible para consulta.;La pantalla movil mantiene alineacion, iconos, colores y textos legibles de acuerdo con el diseno definido.;ESSA\Oficina virtual ESSA;ESSA;ZHARYTH SALOMON;Design;;3
+;;;1;Ingresar a la aplicacion movil ESSA;Se visualiza la pantalla Login;;;;;;;;;;;
+;;;2;Ingresar usuario valido;El sistema acepta el usuario;;;;;;;;;;;
+;;;3;Ingresar contrasena valida;El sistema acepta la contrasena;;;;;;;;;;;
+;;;4;Seleccionar Ingresar;El usuario accede al home autenticado;;;;;;;;;;;
+;;;5;Navegar hasta la pantalla Ver en mapa;Se visualiza la pantalla funcional;;;;;;;;;;;
+;;;6;Comparar la pantalla con el diseno UX UI vigente;Los iconos, colores, tipografia, alineacion, ubicacion de elementos y textos legibles coinciden con el figma movil aprobado;;;;;;;;;;;
